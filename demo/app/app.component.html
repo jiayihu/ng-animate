@@ -31,6 +31,12 @@
       [@fadeOut]="fadeOut"
       [@fadeOutUp]="fadeOutUp"
       [@fadeOutRight]="fadeOutRight"
+
+      [@slideInDown]="slideInDown"
+      [@slideInLeft]="slideInLeft"
+      [@slideOutUp]="slideOutUp"
+      [@slideOutRight]="slideOutRight"
+
       class="box"
     ></div>
 
@@ -69,6 +75,16 @@
       <p>
         <button
           *ngFor="let animation of fading"
+          (click)="animate(animation)"
+          class="btn"
+          type="button"
+        >{{ animation }}</button>
+      </p>
+
+      <h2>Sliding <small>(equals to fading w/o changing opacity)</small></h2>
+      <p>
+        <button
+          *ngFor="let animation of sliding"
           (click)="animate(animation)"
           class="btn"
           type="button"

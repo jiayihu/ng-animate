@@ -88,14 +88,43 @@ import {
     trigger('fadeOutUp', [
       transition('* => *', [
         useAnimation(fade3d, {
-          params: { fromY: '100%' },
+          params: { toY: '-100%' },
         }),
       ]),
     ]),
     trigger('fadeOutRight', [
       transition('* => *', [
         useAnimation(fade3d, {
-          params: { fromX: '100%' },
+          params: { toX: '100%' },
+        }),
+      ]),
+    ]),
+
+    trigger('slideInDown', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { toOpacity: 1, fromY: '-100%' },
+        }),
+      ]),
+    ]),
+    trigger('slideInLeft', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { toOpacity: 1, fromX: '-100%' },
+        }),
+      ]),
+    ]),
+    trigger('slideOutUp', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { toY: '-100%' },
+        }),
+      ]),
+    ]),
+    trigger('slideOutRight', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { toX: '100%' },
         }),
       ]),
     ]),
@@ -138,6 +167,8 @@ export class AppComponent {
     'fadeOutUp',
     'fadeOutRight',
   ];
+
+  sliding = ['slideInDown', 'slideInLeft', 'slideOutUp', 'slideOutRight'];
 
   constructor() {
     this.attentionSeekers.forEach(name => (this[name] = false));

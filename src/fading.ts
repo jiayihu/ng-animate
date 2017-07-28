@@ -11,7 +11,11 @@ export const fade3d = animation(
         transform: 'translate3d({{ fromX }}, {{ fromY }}, {{ fromZ }})',
         offset: 0,
       }),
-      style({ opacity: '{{ toOpacity }}', transform: 'none', offset: 1 }),
+      style({
+        opacity: '{{ toOpacity }}',
+        transform: 'translate3d({{ toX }}, {{ toY }}, {{ toZ }})',
+        offset: 1,
+      }),
     ])
   ),
   {
@@ -22,6 +26,9 @@ export const fade3d = animation(
       fromX: 0,
       fromY: 0,
       fromZ: 0,
+      toX: 0,
+      toY: 0,
+      toZ: 0,
     },
   }
 );

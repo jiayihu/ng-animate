@@ -7,6 +7,11 @@ body {
   margin: 0;
 }
 
+small {
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
 .btn {
   background-color: #fff;
   border: none;
