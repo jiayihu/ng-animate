@@ -2,51 +2,21 @@
   <div class="content">
     <h1>ng-animate</h1>
 
-    <div
-      [@bounce]="bounce"
-      [@flash]="flash"
-      [@pulse]="pulse"
-      [@rubberBand]="rubberBand"
-      [@shake]="shake"
-      [@swing]="swing"
-      [@tada]="tada"
-      [@wobble]="wobble"
-      [@jello]="jello"
-
-      [@bounceIn]="bounceIn"
-      [@bounceInDown]="bounceInDown"
-      [@bounceInLeft]="bounceInLeft"
-      [@bounceInRight]="bounceInRight"
-      [@bounceInUp]="bounceInUp"
-
-      [@bounceOut]="bounceOut"
-      [@bounceOutDown]="bounceOutDown"
-      [@bounceOutLeft]="bounceOutLeft"
-      [@bounceOutRight]="bounceOutRight"
-      [@bounceOutUp]="bounceOutUp"
-
-      [@fadeIn]="fadeIn"
-      [@fadeInDown]="fadeInDown"
-      [@fadeInLeft]="fadeInLeft"
-      [@fadeOut]="fadeOut"
-      [@fadeOutUp]="fadeOutUp"
-      [@fadeOutRight]="fadeOutRight"
-
-      [@slideInDown]="slideInDown"
-      [@slideInLeft]="slideInLeft"
-      [@slideOutUp]="slideOutUp"
-      [@slideOutRight]="slideOutRight"
-
-      [@flip]="flip"
-      [@flipInX]="flipInX"
-      [@flipInY]="flipInY"
-      [@flipOutX]="flipOutX"
-      [@flipOutY]="flipOutY"
-
-      class="box"
-    ></div>
-
     <div class="animations">
+      <div
+        [@bounce]="bounce"
+        [@flash]="flash"
+        [@pulse]="pulse"
+        [@rubberBand]="rubberBand"
+        [@shake]="shake"
+        [@swing]="swing"
+        [@tada]="tada"
+        [@wobble]="wobble"
+        [@jello]="jello"
+
+        class="box"
+      ></div>
+
       <h2>Attention Seekers</h2>
       <p>
         <button
@@ -57,6 +27,15 @@
         >{{ animation }}</button>
       </p>
 
+      <div
+        [@bounceIn]="bounceIn"
+        [@bounceInDown]="bounceInDown"
+        [@bounceInLeft]="bounceInLeft"
+        [@bounceInRight]="bounceInRight"
+        [@bounceInUp]="bounceInUp"
+
+        class="box"
+      ></div>
       <h2>Bounce Entrances</h2>
       <p>
         <button
@@ -67,6 +46,15 @@
         >{{ animation }}</button>
       </p>
 
+      <div
+        [@bounceOut]="bounceOut"
+        [@bounceOutDown]="bounceOutDown"
+        [@bounceOutLeft]="bounceOutLeft"
+        [@bounceOutRight]="bounceOutRight"
+        [@bounceOutUp]="bounceOutUp"
+
+        class="box"
+      ></div>
       <h2>Bounce Exits</h2>
       <p>
         <button
@@ -77,6 +65,16 @@
         >{{ animation }}</button>
       </p>
 
+      <div
+        [@fadeIn]="fadeIn"
+        [@fadeInDown]="fadeInDown"
+        [@fadeInLeft]="fadeInLeft"
+        [@fadeOut]="fadeOut"
+        [@fadeOutUp]="fadeOutUp"
+        [@fadeOutRight]="fadeOutRight"
+
+        class="box"
+      ></div>
       <h2>Fading</h2>
       <p>
         <button
@@ -87,6 +85,14 @@
         >{{ animation }}</button>
       </p>
 
+      <div
+        [@slideInDown]="slideInDown"
+        [@slideInLeft]="slideInLeft"
+        [@slideOutUp]="slideOutUp"
+        [@slideOutRight]="slideOutRight"
+
+        class="box"
+      ></div>
       <h2>Sliding <small>(equals to fading w/o changing opacity)</small></h2>
       <p>
         <button
@@ -97,6 +103,15 @@
         >{{ animation }}</button>
       </p>
 
+      <div
+        [@flip]="flip"
+        [@flipInX]="flipInX"
+        [@flipInY]="flipInY"
+        [@flipOutX]="flipOutX"
+        [@flipOutY]="flipOutY"
+
+        class="box"
+      ></div>
       <h2>Flippers</h2>
       <p>
         <button
