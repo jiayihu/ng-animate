@@ -32,6 +32,10 @@ import {
   jackInTheBox,
   rollIn,
   rollOut,
+  zoomIn,
+  zoomIn3d,
+  zoomOut,
+  zoomOut3d,
 } from '../../src/index';
 
 @Component({
@@ -225,6 +229,34 @@ import {
     trigger('jackInTheBox', [transition('* => *', useAnimation(jackInTheBox))]),
     trigger('rollIn', [transition('* => *', useAnimation(rollIn))]),
     trigger('rollOut', [transition('* => *', useAnimation(rollOut))]),
+
+    trigger('zoomIn', [transition('* => *', useAnimation(zoomIn))]),
+    trigger('zoomInLeft', [transition('* => *', useAnimation(zoomIn3d))]),
+    trigger('zoomInDown', [
+      transition(
+        '* => *',
+        useAnimation(zoomIn3d, {
+          params: {
+            fromOpacity: 0,
+            toOpacity: 1,
+            fromX: 0,
+            fromY: '-1000px',
+            toX: 0,
+            toY: '60px',
+          },
+        })
+      ),
+    ]),
+    trigger('zoomOut', [transition('* => *', useAnimation(zoomOut))]),
+    trigger('zoomOutUp', [transition('* => *', useAnimation(zoomOut3d))]),
+    trigger('zoomOutRight', [
+      transition(
+        '* => *',
+        useAnimation(zoomOut3d, {
+          params: { fromX: '-42px', fromY: 0, toX: '2000px', toY: 0 },
+        })
+      ),
+    ]),
   ],
 })
 export class AppComponent {
@@ -282,6 +314,15 @@ export class AppComponent {
   ];
 
   specials = ['hinge', 'jackInTheBox', 'rollIn', 'rollOut'];
+
+  zooming = [
+    'zoomIn',
+    'zoomInDown',
+    'zoomInLeft',
+    'zoomOut',
+    'zoomOutUp',
+    'zoomOutRight',
+  ];
 
   animate(name: 'string') {
     this[name] = !this[name];

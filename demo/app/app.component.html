@@ -176,6 +176,26 @@
           type="button"
         >{{ animation }}</button>
       </p>
+
+      <div
+        [@zoomIn]="zoomIn"
+        [@zoomInLeft]="zoomInLeft"
+        [@zoomInDown]="zoomInDown"
+        [@zoomOut]="zoomOut"
+        [@zoomOutUp]="zoomOutUp"
+        [@zoomOutRight]="zoomOutRight"
+
+        class="box"
+      ></div>
+      <h2>Zooming</h2>
+      <p>
+        <button
+          *ngFor="let animation of zooming"
+          (click)="animate(animation)"
+          class="btn"
+          type="button"
+        >{{ animation }}</button>
+      </p>
     </div>
   </div>
 </div>

@@ -37,3 +37,5 @@ export { lightSpeedIn, lightSpeedOut } from './lightSpeed';
 export { rotate, rotate3d } from './rotate';
 
 export { hinge, jackInTheBox, rollIn, rollOut } from './specials';
+
+export { zoomIn, zoomIn3d, zoomOut, zoomOut3d } from './zooming';
