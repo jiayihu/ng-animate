@@ -1,7 +1,7 @@
 body {
   background: #3494e6;
   background: linear-gradient(to right, #3494e6, #ec6ead);
-  color: #666;
+  color: #fff;
   font-family: 'helvetica neue', helvetica, sans-serif;
   font-size: 15px;
   margin: 0;
@@ -11,7 +11,7 @@ body {
   background-color: #fff;
   border: none;
   border-radius: 2px;
-  color: inherit;
+  color: #666;
   cursor: pointer;
   font-size: inherit;
   padding: .5rem 1rem;
@@ -26,6 +26,7 @@ body {
 
 .content {
   flex-grow: 1;
+  text-align: center;
 }
 
 .box {
@@ -38,5 +39,4 @@ body {
 
 .animations {
   margin-top: 3rem;
-  text-align: center;
 }

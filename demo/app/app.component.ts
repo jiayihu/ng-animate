@@ -10,7 +10,17 @@ import {
   tada,
   wobble,
   jello,
-  fade,
+  bounceIn,
+  bounceInDown,
+  bounceInLeft,
+  bounceInRight,
+  bounceInUp,
+  bounceOut,
+  bounceOutDown,
+  bounceOutLeft,
+  bounceOutRight,
+  bounceOutUp,
+  fade3d,
 } from '../../src/index';
 
 @Component({
@@ -29,8 +39,66 @@ import {
     trigger('wobble', [transition('* => *', [useAnimation(wobble)])]),
     trigger('jello', [transition('* => *', [useAnimation(jello)])]),
 
-    trigger('fadeOut', [transition('* => *', [useAnimation(fade)])]),
-    trigger('fadeIn', [transition('* => *', [useAnimation(fade)])]),
+    trigger('bounceIn', [transition('* => *', [useAnimation(bounceIn)])]),
+    trigger('bounceInDown', [
+      transition('* => *', [useAnimation(bounceInDown)]),
+    ]),
+    trigger('bounceInLeft', [
+      transition('* => *', [useAnimation(bounceInLeft)]),
+    ]),
+    trigger('bounceInRight', [
+      transition('* => *', [useAnimation(bounceInRight)]),
+    ]),
+    trigger('bounceInUp', [transition('* => *', [useAnimation(bounceInUp)])]),
+
+    trigger('bounceOut', [transition('* => *', [useAnimation(bounceOut)])]),
+    trigger('bounceOutDown', [
+      transition('* => *', [useAnimation(bounceOutDown)]),
+    ]),
+    trigger('bounceOutLeft', [
+      transition('* => *', [useAnimation(bounceOutLeft)]),
+    ]),
+    trigger('bounceOutRight', [
+      transition('* => *', [useAnimation(bounceOutRight)]),
+    ]),
+    trigger('bounceOutUp', [transition('* => *', [useAnimation(bounceOutUp)])]),
+
+    trigger('fadeIn', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { fromOpacity: 0, toOpacity: 1 },
+        }),
+      ]),
+    ]),
+    trigger('fadeInDown', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { fromOpacity: 0, toOpacity: 1, fromY: '-100%' },
+        }),
+      ]),
+    ]),
+    trigger('fadeInLeft', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { fromOpacity: 0, toOpacity: 1, fromX: '-100%' },
+        }),
+      ]),
+    ]),
+    trigger('fadeOut', [transition('* => *', [useAnimation(fade3d)])]),
+    trigger('fadeOutUp', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { fromY: '100%' },
+        }),
+      ]),
+    ]),
+    trigger('fadeOutRight', [
+      transition('* => *', [
+        useAnimation(fade3d, {
+          params: { fromX: '100%' },
+        }),
+      ]),
+    ]),
   ],
 })
 export class AppComponent {
@@ -46,8 +114,30 @@ export class AppComponent {
     'jello',
   ];
 
-  fadeOut: boolean;
-  fadeIn: boolean;
+  bounceEntrances = [
+    'bounceIn',
+    'bounceInDown',
+    'bounceInLeft',
+    'bounceInRight',
+    'bounceInUp',
+  ];
+
+  bounceExits = [
+    'bounceOut',
+    'bounceOutDown',
+    'bounceOutLeft',
+    'bounceOutRight',
+    'bounceOutUp',
+  ];
+
+  fading = [
+    'fadeIn',
+    'fadeInDown',
+    'fadeInLeft',
+    'fadeOut',
+    'fadeOutUp',
+    'fadeOutRight',
+  ];
 
   constructor() {
     this.attentionSeekers.forEach(name => (this[name] = false));
