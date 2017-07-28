@@ -121,6 +121,43 @@
           type="button"
         >{{ animation }}</button>
       </p>
+
+      <div
+        [@lightSpeedIn]="lightSpeedIn"
+        [@lightSpeedOut]="lightSpeedOut"
+
+        class="box"
+      ></div>
+      <h2>LightSpeed</h2>
+      <p>
+        <button
+          *ngFor="let animation of lightSpeed"
+          (click)="animate(animation)"
+          class="btn"
+          type="button"
+        >{{ animation }}</button>
+      </p>
+
+      <div
+        [@rotateIn]="rotateIn"
+        [@rotateInDownLeft]="rotateInDownLeft"
+        [@rotateInDownRight]="rotateInDownRight"
+        [@rotateInUpLeft]="rotateInUpLeft"
+        [@rotateInUpRight]="rotateInUpRight"
+        [@rotateOut]="rotateOut"
+        [@rotateOutDownLeft]="rotateOutDownLeft"
+
+        class="box"
+      ></div>
+      <h2>Rotate</h2>
+      <p>
+        <button
+          *ngFor="let animation of rotate"
+          (click)="animate(animation)"
+          class="btn"
+          type="button"
+        >{{ animation }}</button>
+      </p>
     </div>
   </div>
 </div>

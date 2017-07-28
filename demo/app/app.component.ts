@@ -24,6 +24,10 @@ import {
   flip,
   flipIn,
   flipOut,
+  lightSpeedIn,
+  lightSpeedOut,
+  rotate,
+  rotate3d,
 } from '../../src/index';
 
 @Component({
@@ -156,6 +160,62 @@ import {
         })
       ),
     ]),
+
+    trigger('lightSpeedIn', [transition('* => *', useAnimation(lightSpeedIn))]),
+    trigger('lightSpeedOut', [
+      transition('* => *', useAnimation(lightSpeedOut)),
+    ]),
+
+    trigger('rotateIn', [transition('* => *', useAnimation(rotate))]),
+    trigger('rotateInDownLeft', [transition('* => *', useAnimation(rotate3d))]),
+    trigger('rotateInDownRight', [
+      transition(
+        '* => *',
+        useAnimation(rotate3d, {
+          params: { direction: 'right', degrees: '45deg' },
+        })
+      ),
+    ]),
+    trigger('rotateInUpLeft', [
+      transition(
+        '* => *',
+        useAnimation(rotate3d, {
+          params: { degrees: '45deg' },
+        })
+      ),
+    ]),
+    trigger('rotateInUpRight', [
+      transition(
+        '* => *',
+        useAnimation(rotate3d, {
+          params: { direction: 'right', degrees: '-90deg' },
+        })
+      ),
+    ]),
+    trigger('rotateOut', [
+      transition(
+        '* => *',
+        useAnimation(rotate, {
+          params: {
+            fromOpacity: 1,
+            toOpacity: 0,
+            degrees: '200deg',
+          },
+        })
+      ),
+    ]),
+    trigger('rotateOutDownLeft', [
+      transition(
+        '* => *',
+        useAnimation(rotate, {
+          params: {
+            fromOpacity: 1,
+            toOpacity: 0,
+            degrees: '45deg',
+          },
+        })
+      ),
+    ]),
   ],
 })
 export class AppComponent {
@@ -199,6 +259,18 @@ export class AppComponent {
   sliding = ['slideInDown', 'slideInLeft', 'slideOutUp', 'slideOutRight'];
 
   flippers = ['flip', 'flipInX', 'flipInY', 'flipOutX', 'flipOutY'];
+
+  lightSpeed = ['lightSpeedIn', 'lightSpeedOut'];
+
+  rotate = [
+    'rotateIn',
+    'rotateInDownLeft',
+    'rotateInDownRight',
+    'rotateInUpLeft',
+    'rotateInUpRight',
+    'rotateOut',
+    'rotateOutDownLeft',
+  ];
 
   constructor() {
     this.attentionSeekers.forEach(name => (this[name] = false));

@@ -31,3 +31,7 @@ export {
 export { fade3d } from './fading';
 
 export { flip, flipIn, flipOut } from './flippers';
+
+export { lightSpeedIn, lightSpeedOut } from './lightSpeed';
+
+export { rotate, rotate3d } from './rotate';
