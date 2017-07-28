@@ -6,7 +6,7 @@ export const rotate = animation(
   [
     style({ 'transform-origin': 'center' }),
     animate(
-      '{{ timing }}s ease-out',
+      '{{ timing }}s',
       keyframes([
         style({
           opacity: '{{ fromOpacity }}',
@@ -35,7 +35,7 @@ export const rotate3d = animation(
   [
     style({ 'transform-origin': '{{ direction }} bottom' }),
     animate(
-      '{{ timing }}s ease-out',
+      '{{ timing }}s',
       keyframes([
         style({
           'transform-origin': '{{ direction }} bottom',

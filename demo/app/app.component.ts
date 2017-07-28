@@ -28,6 +28,10 @@ import {
   lightSpeedOut,
   rotate,
   rotate3d,
+  hinge,
+  jackInTheBox,
+  rollIn,
+  rollOut,
 } from '../../src/index';
 
 @Component({
@@ -216,6 +220,11 @@ import {
         })
       ),
     ]),
+
+    trigger('hinge', [transition('* => *', useAnimation(hinge))]),
+    trigger('jackInTheBox', [transition('* => *', useAnimation(jackInTheBox))]),
+    trigger('rollIn', [transition('* => *', useAnimation(rollIn))]),
+    trigger('rollOut', [transition('* => *', useAnimation(rollOut))]),
   ],
 })
 export class AppComponent {
@@ -272,9 +281,7 @@ export class AppComponent {
     'rotateOutDownLeft',
   ];
 
-  constructor() {
-    this.attentionSeekers.forEach(name => (this[name] = false));
-  }
+  specials = ['hinge', 'jackInTheBox', 'rollIn', 'rollOut'];
 
   animate(name: 'string') {
     this[name] = !this[name];

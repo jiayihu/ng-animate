@@ -35,3 +35,5 @@ export { flip, flipIn, flipOut } from './flippers';
 export { lightSpeedIn, lightSpeedOut } from './lightSpeed';
 
 export { rotate, rotate3d } from './rotate';
+
+export { hinge, jackInTheBox, rollIn, rollOut } from './specials';

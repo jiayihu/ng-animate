@@ -158,6 +158,24 @@
           type="button"
         >{{ animation }}</button>
       </p>
+
+      <div
+        [@hinge]="hinge"
+        [@jackInTheBox]="jackInTheBox"
+        [@rollIn]="rollIn"
+        [@rollOut]="rollOut"
+
+        class="box"
+      ></div>
+      <h2>Rotate</h2>
+      <p>
+        <button
+          *ngFor="let animation of specials"
+          (click)="animate(animation)"
+          class="btn"
+          type="button"
+        >{{ animation }}</button>
+      </p>
     </div>
   </div>
 </div>
