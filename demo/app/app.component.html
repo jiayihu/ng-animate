@@ -37,6 +37,12 @@
       [@slideOutUp]="slideOutUp"
       [@slideOutRight]="slideOutRight"
 
+      [@flip]="flip"
+      [@flipInX]="flipInX"
+      [@flipInY]="flipInY"
+      [@flipOutX]="flipOutX"
+      [@flipOutY]="flipOutY"
+
       class="box"
     ></div>
 
@@ -85,6 +91,16 @@
       <p>
         <button
           *ngFor="let animation of sliding"
+          (click)="animate(animation)"
+          class="btn"
+          type="button"
+        >{{ animation }}</button>
+      </p>
+
+      <h2>Flippers</h2>
+      <p>
+        <button
+          *ngFor="let animation of flippers"
           (click)="animate(animation)"
           class="btn"
           type="button"

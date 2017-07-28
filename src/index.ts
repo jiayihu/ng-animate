@@ -29,3 +29,5 @@ export {
 } from './bounce-exits';
 
 export { fade3d } from './fading';
+
+export { flip, flipIn, flipOut } from './flippers';
