@@ -1,0 +1,70 @@
+{
+  "name": "ng-animate",
+  "version": "0.1.0",
+  "description": "A set of easy to use Angular 4+ animations",
+  "main": "index.js",
+  "files": [
+    "dist/index.js"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc src/index.ts --outDir dist",
+    "build:demo": "rimraf demo-dist && cross-env NODE_ENV=production webpack",
+    "clean": "rimraf dist",
+    "start": "webpack-dev-server --inline",
+    "lint": "tslint \"./src/**/*.ts\"",
+    "prepush": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiayihu/ng-animate.git"
+  },
+  "keywords": [
+    "angular",
+    "animations"
+  ],
+  "author": "Jiayi Hu <jiayi.ghu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jiayihu/ng-animate/issues"
+  },
+  "homepage": "https://github.com/jiayihu/ng-animate#readme",
+  "devDependencies": {
+    "@angular/animations": "^4.3.2",
+    "@angular/common": "^4.3.2",
+    "@angular/compiler": "^4.3.2",
+    "@angular/compiler-cli": "^4.3.2",
+    "@angular/core": "^4.3.2",
+    "@angular/forms": "^4.3.2",
+    "@angular/http": "^4.3.2",
+    "@angular/platform-browser": "^4.3.2",
+    "@angular/platform-browser-dynamic": "^4.3.2",
+    "@angular/platform-server": "^4.3.2",
+    "@angular/router": "^4.3.2",
+    "@ngtools/webpack": "^1.5.5",
+    "@types/node": "^8.0.17",
+    "angular2-template-loader": "^0.6.2",
+    "codelyzer": "^3.1.2",
+    "copy-webpack-plugin": "^4.0.1",
+    "core-js": "^2.4.1",
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "husky": "^0.14.3",
+    "raw-loader": "^0.5.1",
+    "reflect-metadata": "^0.1.10",
+    "rimraf": "^2.6.1",
+    "rxjs": "^5.4.2",
+    "ts-loader": "^2.3.2",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.2",
+    "web-animations-js": "^2.3.1",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1",
+    "zone.js": "^0.8.16"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^4.2.0",
+    "@angular/core": "^4.2.0",
+    "web-animations-js": "^2.2.2"
+  }
+}

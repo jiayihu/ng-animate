@@ -1,0 +1,42 @@
+body {
+  background: #3494e6;
+  background: linear-gradient(to right, #3494e6, #ec6ead);
+  color: #666;
+  font-family: 'helvetica neue', helvetica, sans-serif;
+  font-size: 15px;
+  margin: 0;
+}
+
+.btn {
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  padding: .5rem 1rem;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 3px;
+  height: 48px;
+  width: 48px;
+  margin: 0 auto;
+}
+
+.animations {
+  margin-top: 3rem;
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="content">
+    <div
+      [@bounce]="{ value: bounce, params: { timing: 10 } }"
+
+      [@fadeOut]="fadeOut"
+      [@fadeIn]="{ value: fadeIn, params: { from: 0, to: 1, timing: 2 } }"
+      class="box"
+    ></div>
+
+    <div class="animations">
+      <button (click)="animate('bounce')" class="btn" type="button">bounce</button>
+
+      <button (click)="animate('fadeOut')" class="btn" type="button">fadeOut</button>
+      <button (click)="animate('fadeIn')" class="btn" type="button">fadeIn</button>
+    </div>
+  </div>
+</div>
