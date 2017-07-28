@@ -1,7 +1,15 @@
 <div class="container">
   <div class="content">
     <div
-      [@bounce]="{ value: bounce, params: { timing: 10 } }"
+      [@bounce]="bounce"
+      [@flash]="flash"
+      [@pulse]="pulse"
+      [@rubberBand]="rubberBand"
+      [@shake]="shake"
+      [@swing]="swing"
+      [@tada]="tada"
+      [@wobble]="wobble"
+      [@jello]="jello"
 
       [@fadeOut]="fadeOut"
       [@fadeIn]="{ value: fadeIn, params: { from: 0, to: 1, timing: 2 } }"
@@ -9,10 +17,19 @@
     ></div>
 
     <div class="animations">
-      <button (click)="animate('bounce')" class="btn" type="button">bounce</button>
+      <p>
+          <button
+            *ngFor="let animation of attentionSeekers"
+            (click)="animate(animation)"
+            class="btn"
+            type="button"
+          >{{ animation }}</button>
+      </p>
 
-      <button (click)="animate('fadeOut')" class="btn" type="button">fadeOut</button>
-      <button (click)="animate('fadeIn')" class="btn" type="button">fadeIn</button>
+      <p>
+        <button (click)="animate('fadeOut')" class="btn" type="button">fadeOut</button>
+        <button (click)="animate('fadeIn')" class="btn" type="button">fadeIn</button>
+      </p>
     </div>
   </div>
 </div>
