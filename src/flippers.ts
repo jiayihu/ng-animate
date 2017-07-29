@@ -1,6 +1,5 @@
 import { animation, style, animate, keyframes } from '@angular/animations';
-
-const DEFAULT_TIMING = 1;
+import { DEFAULT_TIMING } from './utils';
 
 export const flip = animation(
   [
@@ -38,72 +37,82 @@ export const flip = animation(
   }
 );
 
-export const flipIn = animation(
-  [
-    style({ 'backface-visibility': 'visible' }),
-    animate(
-      '{{ timing }}s',
-      keyframes([
-        style({
-          opacity: 0,
-          transform:
-            'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 90deg)',
-          offset: 0,
-        }),
-        style({
-          transform:
-            'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -20deg)',
-          offset: 0.4,
-        }),
-        style({
-          opacity: 1,
-          transform:
-            'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 10deg)',
-          offset: 0.6,
-        }),
-        style({
-          transform:
-            'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -5deg)',
-          offset: 0.8,
-        }),
-        style({
-          transform: 'perspective(400px)',
-          offset: 1,
-        }),
-      ])
-    ),
-  ],
-  {
-    params: { timing: DEFAULT_TIMING, rotateX: 1, rotateY: 0 },
-  }
-);
+function flipIn(rotateX, rotateY) {
+  const params = { timing: DEFAULT_TIMING, rotateX, rotateY };
 
-export const flipOut = animation(
-  [
-    style({ 'backface-visibility': 'visible' }),
-    animate(
-      '{{ timing }}s',
-      keyframes([
-        style({
-          transform: 'perspective(400px)',
-          offset: 0,
-        }),
-        style({
-          opacity: 1,
-          transform:
-            'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -20deg)',
-          offset: 0.3,
-        }),
-        style({
-          opacity: 0,
-          transform:
-            'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 90deg)',
-          offset: 1,
-        }),
-      ])
-    ),
-  ],
-  {
-    params: { timing: DEFAULT_TIMING, rotateX: 1, rotateY: 0 },
-  }
-);
+  return animation(
+    [
+      style({ 'backface-visibility': 'visible' }),
+      animate(
+        '{{ timing }}s',
+        keyframes([
+          style({
+            opacity: 0,
+            transform:
+              'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 90deg)',
+            offset: 0,
+          }),
+          style({
+            transform:
+              'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -20deg)',
+            offset: 0.4,
+          }),
+          style({
+            opacity: 1,
+            transform:
+              'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 10deg)',
+            offset: 0.6,
+          }),
+          style({
+            transform:
+              'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -5deg)',
+            offset: 0.8,
+          }),
+          style({
+            transform: 'perspective(400px)',
+            offset: 1,
+          }),
+        ])
+      ),
+    ],
+    { params }
+  );
+}
+
+export const flipInX = flipIn(1, 0);
+export const flipInY = flipIn(0, 1);
+
+function flipOut(rotateX, rotateY) {
+  const params = { timing: DEFAULT_TIMING, rotateX, rotateY };
+
+  return animation(
+    [
+      style({ 'backface-visibility': 'visible' }),
+      animate(
+        '{{ timing }}s',
+        keyframes([
+          style({
+            transform: 'perspective(400px)',
+            offset: 0,
+          }),
+          style({
+            opacity: 1,
+            transform:
+              'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -20deg)',
+            offset: 0.3,
+          }),
+          style({
+            opacity: 0,
+            transform:
+              'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 90deg)',
+            offset: 1,
+          }),
+        ])
+      ),
+    ],
+    { params }
+  );
+}
+
+export const flipOutX = flipOut(1, 0);
+export const flipOutY = flipOut(0, 1);

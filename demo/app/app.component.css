@@ -5,6 +5,7 @@ body {
   font-family: 'helvetica neue', helvetica, sans-serif;
   font-size: 15px;
   margin: 0;
+  padding-bottom: 4rem;
 }
 
 small {
@@ -25,12 +26,13 @@ small {
 .container {
   align-items: center;
   display: flex;
+  justify-content: center;
   min-height: 100vh;
   width: 100vw;
 }
 
 .content {
-  flex-grow: 1;
+  max-width: 50rem;
   text-align: center;
 }
 

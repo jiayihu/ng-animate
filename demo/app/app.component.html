@@ -31,34 +31,17 @@
         [@bounceIn]="bounceIn"
         [@bounceInDown]="bounceInDown"
         [@bounceInLeft]="bounceInLeft"
-        [@bounceInRight]="bounceInRight"
-        [@bounceInUp]="bounceInUp"
 
-        class="box"
-      ></div>
-      <h2>Bounce Entrances</h2>
-      <p>
-        <button
-          *ngFor="let animation of bounceEntrances"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
-
-      <div
         [@bounceOut]="bounceOut"
-        [@bounceOutDown]="bounceOutDown"
-        [@bounceOutLeft]="bounceOutLeft"
-        [@bounceOutRight]="bounceOutRight"
         [@bounceOutUp]="bounceOutUp"
+        [@bounceOutRight]="bounceOutRight"
 
         class="box"
       ></div>
-      <h2>Bounce Exits</h2>
+      <h2>Bouncing <small>(not all directions are shown in the demo)</small></h2>
       <p>
         <button
-          *ngFor="let animation of bounceExits"
+          *ngFor="let animation of bouncing"
           (click)="animate(animation)"
           class="btn"
           type="button"
@@ -75,7 +58,7 @@
 
         class="box"
       ></div>
-      <h2>Fading</h2>
+      <h2>Fading <small>(not all directions are shown in the demo)</small></h2>
       <p>
         <button
           *ngFor="let animation of fading"
@@ -141,15 +124,14 @@
       <div
         [@rotateIn]="rotateIn"
         [@rotateInDownLeft]="rotateInDownLeft"
-        [@rotateInDownRight]="rotateInDownRight"
-        [@rotateInUpLeft]="rotateInUpLeft"
         [@rotateInUpRight]="rotateInUpRight"
         [@rotateOut]="rotateOut"
-        [@rotateOutDownLeft]="rotateOutDownLeft"
+        [@rotateOutUpLeft]="rotateOutUpLeft"
+        [@rotateOutDownRight]="rotateOutDownRight"
 
         class="box"
       ></div>
-      <h2>Rotate</h2>
+      <h2>Rotate <small>(not all directions are shown in the demo)</small></h2>
       <p>
         <button
           *ngFor="let animation of rotate"
@@ -167,7 +149,7 @@
 
         class="box"
       ></div>
-      <h2>Rotate</h2>
+      <h2>Specials</h2>
       <p>
         <button
           *ngFor="let animation of specials"

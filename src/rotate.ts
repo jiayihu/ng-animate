@@ -1,64 +1,59 @@
 import { animation, style, animate, keyframes } from '@angular/animations';
+import { DEFAULT_TIMING, transformAxis } from './utils';
 
-const DEFAULT_TIMING = 1;
+function rotate(fromOpacity: number, toOpacity: number) {
+  const isIn = fromOpacity <= toOpacity;
 
-export const rotate = animation(
-  [
-    style({ 'transform-origin': 'center' }),
-    animate(
-      '{{ timing }}s',
-      keyframes([
-        style({
-          opacity: '{{ fromOpacity }}',
-          transform: 'rotate3d(0, 0, 1, {{ degrees }})',
-          offset: 0,
-        }),
-        style({
-          opacity: '{{ toOpacity }}',
-          transform: 'none',
-          offset: 1,
-        }),
-      ])
-    ),
-  ],
-  {
-    params: {
-      timing: DEFAULT_TIMING,
-      fromOpacity: 0,
-      toOpacity: 1,
-      degrees: '-200deg',
-    },
-  }
-);
+  return function(origin: string) {
+    return function(degrees) {
+      const params = {
+        timing: DEFAULT_TIMING,
+        fromOpacity,
+        toOpacity,
+        origin,
+        degrees,
+      };
 
-export const rotate3d = animation(
-  [
-    style({ 'transform-origin': '{{ direction }} bottom' }),
-    animate(
-      '{{ timing }}s',
-      keyframes([
-        style({
-          'transform-origin': '{{ direction }} bottom',
-          opacity: '{{ fromOpacity }}',
-          transform: 'rotate3d(0, 0, 1, {{ degrees }})',
-          offset: 0,
-        }),
-        style({
-          'transform-origin': '{{ direction }} bottom',
-          opacity: '{{ toOpacity }}',
-          transform: 'none',
-          offset: 1,
-        }),
-      ])
-    ),
-  ],
-  {
-    params: {
-      timing: DEFAULT_TIMING,
-      fromOpacity: 0,
-      toOpacity: 1,
-      direction: 'left',
-      degrees: '-45deg',
-    },
-  }
-);
+      return animation(
+        animate(
+          '{{ timing }}s',
+          keyframes([
+            style({
+              'transform-origin': '{{ origin }}',
+              opacity: '{{ fromOpacity }}',
+              transform: isIn ? 'rotate3d(0, 0, 1, {{ degrees }})' : 'none',
+              offset: 0,
+            }),
+            style({
+              'transform-origin': '{{ origin }}',
+              opacity: '{{ toOpacity }}',
+              transform: isIn ? 'none' : 'rotate3d(0, 0, 1, {{ degrees }})',
+              offset: 1,
+            }),
+          ])
+        ),
+        { params }
+      );
+    };
+  };
+}
+
+const rotateInDirection = rotate(0, 1);
+const rotateInLeft = rotateInDirection('left bottom');
+const rotateInRight = rotateInDirection('right bottom');
+
+export const rotateIn = rotateInDirection('center')('-200deg');
+export const rotateInDownLeft = rotateInLeft('-45deg');
+export const rotateInDownRight = rotateInRight('45deg');
+export const rotateInUpLeft = rotateInLeft('45deg');
+export const rotateInUpRight = rotateInRight('-90deg');
+
+const rotateOutDirection = rotate(1, 0);
+const rotateOutLeft = rotateOutDirection('left bottom');
+const rotateOutRight = rotateOutDirection('right bottom');
+
+export const rotateOut = rotateOutDirection('center')('200deg');
+export const rotateOutDownLeft = rotateOutLeft('45deg');
+export const rotateOutDownRight = rotateOutRight('-45deg');
+export const rotateOutUpLeft = rotateOutLeft('-45deg');
+export const rotateOutUpRight = rotateOutRight('90deg');

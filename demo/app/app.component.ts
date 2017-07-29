@@ -20,26 +20,59 @@ import {
   bounceOutLeft,
   bounceOutRight,
   bounceOutUp,
-  fade3d,
+  fadeIn,
+  fadeInDown,
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  fadeOut,
+  fadeOutDown,
+  fadeOutUp,
+  fadeOutLeft,
+  fadeOutRight,
+  slideInDown,
+  slideInUp,
+  slideInLeft,
+  slideInRight,
+  slideOutDown,
+  slideOutUp,
+  slideOutLeft,
+  slideOutRight,
   flip,
-  flipIn,
-  flipOut,
+  flipInX,
+  flipInY,
+  flipOutX,
+  flipOutY,
   lightSpeedIn,
   lightSpeedOut,
-  rotate,
-  rotate3d,
+  rotateIn,
+  rotateInDownLeft,
+  rotateInDownRight,
+  rotateInUpLeft,
+  rotateInUpRight,
+  rotateOut,
+  rotateOutDownLeft,
+  rotateOutDownRight,
+  rotateOutUpLeft,
+  rotateOutUpRight,
   hinge,
   jackInTheBox,
   rollIn,
   rollOut,
   zoomIn,
-  zoomIn3d,
+  zoomInDown,
+  zoomInUp,
+  zoomInLeft,
+  zoomInRight,
   zoomOut,
-  zoomOut3d,
+  zoomOutDown,
+  zoomOutUp,
+  zoomOutLeft,
+  zoomOutRight,
 } from '../../src/index';
 
 @Component({
-  selector: 'app',
+  selector: 'demo-app',
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None,
@@ -57,172 +90,50 @@ import {
     trigger('bounceIn', [transition('* => *', useAnimation(bounceIn))]),
     trigger('bounceInDown', [transition('* => *', useAnimation(bounceInDown))]),
     trigger('bounceInLeft', [transition('* => *', useAnimation(bounceInLeft))]),
-    trigger('bounceInRight', [
-      transition('* => *', useAnimation(bounceInRight)),
-    ]),
-    trigger('bounceInUp', [transition('* => *', useAnimation(bounceInUp))]),
-
     trigger('bounceOut', [transition('* => *', useAnimation(bounceOut))]),
-    trigger('bounceOutDown', [
-      transition('* => *', useAnimation(bounceOutDown)),
-    ]),
-    trigger('bounceOutLeft', [
-      transition('* => *', useAnimation(bounceOutLeft)),
-    ]),
     trigger('bounceOutRight', [
       transition('* => *', useAnimation(bounceOutRight)),
     ]),
     trigger('bounceOutUp', [transition('* => *', useAnimation(bounceOutUp))]),
 
-    trigger('fadeIn', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { fromOpacity: 0, toOpacity: 1 },
-        })
-      ),
-    ]),
-    trigger('fadeInDown', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { fromOpacity: 0, toOpacity: 1, fromY: '-100%' },
-        })
-      ),
-    ]),
-    trigger('fadeInLeft', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { fromOpacity: 0, toOpacity: 1, fromX: '-100%' },
-        })
-      ),
-    ]),
-    trigger('fadeOut', [transition('* => *', useAnimation(fade3d))]),
-    trigger('fadeOutUp', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { toY: '-100%' },
-        })
-      ),
-    ]),
-    trigger('fadeOutRight', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { toX: '100%' },
-        })
-      ),
-    ]),
+    trigger('fadeIn', [transition('* => *', useAnimation(fadeIn))]),
+    trigger('fadeInDown', [transition('* => *', useAnimation(fadeInDown))]),
+    trigger('fadeInLeft', [transition('* => *', useAnimation(fadeInLeft))]),
+    trigger('fadeOut', [transition('* => *', useAnimation(fadeOut))]),
+    trigger('fadeOutUp', [transition('* => *', useAnimation(fadeOutUp))]),
+    trigger('fadeOutRight', [transition('* => *', useAnimation(fadeOutRight))]),
 
-    trigger('slideInDown', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { toOpacity: 1, fromY: '-100%' },
-        })
-      ),
-    ]),
-    trigger('slideInLeft', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { toOpacity: 1, fromX: '-100%' },
-        })
-      ),
-    ]),
-    trigger('slideOutUp', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { toY: '-100%' },
-        })
-      ),
-    ]),
+    trigger('slideInDown', [transition('* => *', useAnimation(slideInDown))]),
+    trigger('slideInLeft', [transition('* => *', useAnimation(slideInLeft))]),
+    trigger('slideOutUp', [transition('* => *', useAnimation(slideOutUp))]),
     trigger('slideOutRight', [
-      transition(
-        '* => *',
-        useAnimation(fade3d, {
-          params: { toX: '100%' },
-        })
-      ),
+      transition('* => *', useAnimation(slideOutRight)),
     ]),
 
     trigger('flip', [transition('* => *', useAnimation(flip))]),
-    trigger('flipInX', [transition('* => *', useAnimation(flipIn))]),
-    trigger('flipInY', [
-      transition(
-        '* => *',
-        useAnimation(flipIn, {
-          params: { rotateX: 0, rotateY: 1 },
-        })
-      ),
-    ]),
-    trigger('flipOutX', [transition('* => *', useAnimation(flipOut))]),
-    trigger('flipOutY', [
-      transition(
-        '* => *',
-        useAnimation(flipOut, {
-          params: { rotateX: 0, rotateY: 1 },
-        })
-      ),
-    ]),
+    trigger('flipInX', [transition('* => *', useAnimation(flipInX))]),
+    trigger('flipInY', [transition('* => *', useAnimation(flipInY))]),
+    trigger('flipOutX', [transition('* => *', useAnimation(flipOutX))]),
+    trigger('flipOutY', [transition('* => *', useAnimation(flipOutY))]),
 
     trigger('lightSpeedIn', [transition('* => *', useAnimation(lightSpeedIn))]),
     trigger('lightSpeedOut', [
       transition('* => *', useAnimation(lightSpeedOut)),
     ]),
 
-    trigger('rotateIn', [transition('* => *', useAnimation(rotate))]),
-    trigger('rotateInDownLeft', [transition('* => *', useAnimation(rotate3d))]),
-    trigger('rotateInDownRight', [
-      transition(
-        '* => *',
-        useAnimation(rotate3d, {
-          params: { direction: 'right', degrees: '45deg' },
-        })
-      ),
-    ]),
-    trigger('rotateInUpLeft', [
-      transition(
-        '* => *',
-        useAnimation(rotate3d, {
-          params: { degrees: '45deg' },
-        })
-      ),
+    trigger('rotateIn', [transition('* => *', useAnimation(rotateIn))]),
+    trigger('rotateInDownLeft', [
+      transition('* => *', useAnimation(rotateInDownLeft)),
     ]),
     trigger('rotateInUpRight', [
-      transition(
-        '* => *',
-        useAnimation(rotate3d, {
-          params: { direction: 'right', degrees: '-90deg' },
-        })
-      ),
+      transition('* => *', useAnimation(rotateInUpRight)),
     ]),
-    trigger('rotateOut', [
-      transition(
-        '* => *',
-        useAnimation(rotate, {
-          params: {
-            fromOpacity: 1,
-            toOpacity: 0,
-            degrees: '200deg',
-          },
-        })
-      ),
+    trigger('rotateOut', [transition('* => *', useAnimation(rotateOut))]),
+    trigger('rotateOutUpLeft', [
+      transition('* => *', useAnimation(rotateOutUpLeft)),
     ]),
-    trigger('rotateOutDownLeft', [
-      transition(
-        '* => *',
-        useAnimation(rotate, {
-          params: {
-            fromOpacity: 1,
-            toOpacity: 0,
-            degrees: '45deg',
-          },
-        })
-      ),
+    trigger('rotateOutDownRight', [
+      transition('* => *', useAnimation(rotateOutDownRight)),
     ]),
 
     trigger('hinge', [transition('* => *', useAnimation(hinge))]),
@@ -231,32 +142,11 @@ import {
     trigger('rollOut', [transition('* => *', useAnimation(rollOut))]),
 
     trigger('zoomIn', [transition('* => *', useAnimation(zoomIn))]),
-    trigger('zoomInLeft', [transition('* => *', useAnimation(zoomIn3d))]),
-    trigger('zoomInDown', [
-      transition(
-        '* => *',
-        useAnimation(zoomIn3d, {
-          params: {
-            fromOpacity: 0,
-            toOpacity: 1,
-            fromX: 0,
-            fromY: '-1000px',
-            toX: 0,
-            toY: '60px',
-          },
-        })
-      ),
-    ]),
+    trigger('zoomInLeft', [transition('* => *', useAnimation(zoomInLeft))]),
+    trigger('zoomInDown', [transition('* => *', useAnimation(zoomInDown))]),
     trigger('zoomOut', [transition('* => *', useAnimation(zoomOut))]),
-    trigger('zoomOutUp', [transition('* => *', useAnimation(zoomOut3d))]),
-    trigger('zoomOutRight', [
-      transition(
-        '* => *',
-        useAnimation(zoomOut3d, {
-          params: { fromX: '-42px', fromY: 0, toX: '2000px', toY: 0 },
-        })
-      ),
-    ]),
+    trigger('zoomOutUp', [transition('* => *', useAnimation(zoomOutUp))]),
+    trigger('zoomOutRight', [transition('* => *', useAnimation(zoomOutRight))]),
   ],
 })
 export class AppComponent {
@@ -272,20 +162,13 @@ export class AppComponent {
     'jello',
   ];
 
-  bounceEntrances = [
+  bouncing = [
     'bounceIn',
     'bounceInDown',
     'bounceInLeft',
-    'bounceInRight',
-    'bounceInUp',
-  ];
-
-  bounceExits = [
     'bounceOut',
-    'bounceOutDown',
-    'bounceOutLeft',
-    'bounceOutRight',
     'bounceOutUp',
+    'bounceOutRight',
   ];
 
   fading = [
@@ -306,11 +189,10 @@ export class AppComponent {
   rotate = [
     'rotateIn',
     'rotateInDownLeft',
-    'rotateInDownRight',
-    'rotateInUpLeft',
     'rotateInUpRight',
     'rotateOut',
-    'rotateOutDownLeft',
+    'rotateOutUpLeft',
+    'rotateOutDownRight',
   ];
 
   specials = ['hinge', 'jackInTheBox', 'rollIn', 'rollOut'];

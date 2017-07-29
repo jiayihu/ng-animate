@@ -1,10 +1,5 @@
 import { animation, style, animate, keyframes } from '@angular/animations';
-
-/**
- * Attention seekers
- */
-
-const DEFAULT_TIMING = 1;
+import { DEFAULT_TIMING } from './utils';
 
 export const bounce = animation(
   [

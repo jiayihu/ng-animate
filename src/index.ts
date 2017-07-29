@@ -18,24 +18,62 @@ export {
   bounceInLeft,
   bounceInRight,
   bounceInUp,
-} from './bounce-entrances';
-
-export {
   bounceOut,
   bounceOutDown,
   bounceOutLeft,
   bounceOutRight,
   bounceOutUp,
-} from './bounce-exits';
+} from './bouncing';
 
-export { fade3d } from './fading';
+export {
+  fadeIn,
+  fadeInDown,
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  fadeOut,
+  fadeOutDown,
+  fadeOutUp,
+  fadeOutLeft,
+  fadeOutRight,
+  slideInDown,
+  slideInUp,
+  slideInLeft,
+  slideInRight,
+  slideOutDown,
+  slideOutUp,
+  slideOutLeft,
+  slideOutRight,
+} from './fading';
 
-export { flip, flipIn, flipOut } from './flippers';
+export { flip, flipInX, flipInY, flipOutX, flipOutY } from './flippers';
 
 export { lightSpeedIn, lightSpeedOut } from './lightSpeed';
 
-export { rotate, rotate3d } from './rotate';
+export {
+  rotateIn,
+  rotateInDownLeft,
+  rotateInDownRight,
+  rotateInUpLeft,
+  rotateInUpRight,
+  rotateOut,
+  rotateOutDownLeft,
+  rotateOutDownRight,
+  rotateOutUpLeft,
+  rotateOutUpRight,
+} from './rotate';
 
 export { hinge, jackInTheBox, rollIn, rollOut } from './specials';
 
-export { zoomIn, zoomIn3d, zoomOut, zoomOut3d } from './zooming';
+export {
+  zoomIn,
+  zoomInDown,
+  zoomInUp,
+  zoomInLeft,
+  zoomInRight,
+  zoomOut,
+  zoomOutDown,
+  zoomOutUp,
+  zoomOutLeft,
+  zoomOutRight,
+} from './zooming';

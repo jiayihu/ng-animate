@@ -28,7 +28,7 @@
     "variable-name": [true, "check-format", "allow-leading-underscore"],
 
     "directive-selector": [false],
-    "component-selector": [true, "element", "bdi", "kebab-case"],
+    "component-selector": [true, "element", "demo", "kebab-case"],
 
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,

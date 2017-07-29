@@ -1,6 +1,5 @@
 import { animation, style, animate, keyframes } from '@angular/animations';
-
-const DEFAULT_TIMING = 1;
+import { DEFAULT_TIMING } from './utils';
 
 export const lightSpeedIn = animation(
   animate(
