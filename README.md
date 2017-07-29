@@ -2,14 +2,18 @@
 
 [![npm](https://img.shields.io/npm/v/ng-animate.svg)](https://www.npmjs.com/package/ng-animate)
 
-`ng-animate` is a library of cool, reusable and flexible animations for Angular. It re-implements all the animations in [animate.css](https://daneden.github.io/animate.css/), but with the power and flexibility of [Angular animations](https://angular.io/guide/animations).
+`ng-animate` is a collection of cool, reusable and flexible animations for Angular. It implements all the animations in [animate.css](https://daneden.github.io/animate.css/), but with the power and flexibility of [Angular animations](https://angular.io/guide/animations) instead of CSS.
 
 > **Note**: the library requires Angular 4.2+, which introduced [different new animation APIs](http://angularjs.blogspot.it/2017/06/angular-42-now-available.html) needed by `ng-animate`.
+
+## Demo
+
+The demo of the animations is available at [https://jiayihu.github.io/ng-animate/](https://jiayihu.github.io/ng-animate/).
 
 ## Usage
 
 ```
-npm install np-animate --save
+npm install ng-animate --save
 ```
 
 ## Example
@@ -72,7 +76,7 @@ Using a template can achieve the same result, but you'll have access to the comp
 
 ### Advanced params
 
-Many of the animations support also other params, for instance `scale`, `fromOpacity`, `toOpacity` and much more, allowing extremely flexible usage and customisation if needed. 
+Many of the animations support also other params like `scale`, `fromOpacity`, `toOpacity` and much more, allowing extremely flexible usage and customisation if needed. 
 
 Single letters like `a, b, c, d` are used for the steps of some animations: `a` is at the starting value, `d` is at the end.  
 The animated property they refer to depends on the animation and the direction (down/up or left/right).
