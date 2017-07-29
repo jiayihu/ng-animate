@@ -32,7 +32,7 @@
         [@bounceInDown]="bounceInDown"
         [@bounceInLeft]="bounceInLeft"
 
-        [@bounceOut]="bounceOut"
+        [@bounceOut]="{ value: bounceOut, params: { scale: 1.25 } }"
         [@bounceOutUp]="bounceOutUp"
         [@bounceOutRight]="bounceOutRight"
 
@@ -49,7 +49,7 @@
       </p>
 
       <div
-        [@fadeIn]="fadeIn"
+        [@fadeIn]="{ value: fadeIn, params: { timing: 2 } }"
         [@fadeInDown]="fadeInDown"
         [@fadeInLeft]="fadeInLeft"
         [@fadeOut]="fadeOut"
@@ -76,7 +76,7 @@
 
         class="box"
       ></div>
-      <h2>Sliding <small>(equals to fading w/o changing opacity)</small></h2>
+      <h2>Sliding <small>(not all directions are shown in the demo)</small></h2>
       <p>
         <button
           *ngFor="let animation of sliding"
@@ -106,7 +106,7 @@
       </p>
 
       <div
-        [@lightSpeedIn]="lightSpeedIn"
+        [@lightSpeedIn]="{ value: lightSpeedIn, params: { timing: 0.4 } }"
         [@lightSpeedOut]="lightSpeedOut"
 
         class="box"
@@ -169,7 +169,7 @@
 
         class="box"
       ></div>
-      <h2>Zooming</h2>
+      <h2>Zooming <small>(not all directions are shown in the demo)</small></h2>
       <p>
         <button
           *ngFor="let animation of zooming"

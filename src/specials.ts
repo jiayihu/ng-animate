@@ -39,21 +39,23 @@ export const hinge = animation(
 
 export const jackInTheBox = animation(
   [
-    style({ 'transform-origin': 'center bottom' }),
     animate(
       '{{ timing }}s',
       keyframes([
         style({
           opacity: 0,
           transform: 'scale(0.1) rotate(30deg)',
+          'transform-origin': 'center bottom',
           offset: 0,
         }),
         style({
+          opacity: 0.5,
           transform: 'rotate(-10deg)',
           offset: 0.5,
         }),
         style({
-          transform: 'rotate(3deg',
+          opacity: 0.7,
+          transform: 'rotate(3deg)',
           offset: 0.7,
         }),
         style({

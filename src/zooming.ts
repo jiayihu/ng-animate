@@ -56,11 +56,11 @@ const zoomInX = zoomInDirection('x');
 
 export const zoomInDown = zoomInY({
   a: '-1000px',
-  b: '60px',
+  b: '10px',
 });
 export const zoomInUp = zoomInY({
   a: '1000px',
-  b: '-60px',
+  b: '-10px',
 });
 export const zoomInLeft = zoomInX({
   a: '-1000px',

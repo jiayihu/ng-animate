@@ -3,7 +3,7 @@ import { DEFAULT_TIMING } from './utils';
 
 export const lightSpeedIn = animation(
   animate(
-    '{{ timing }}s ease-out',
+    '{{ timing }}s',
     keyframes([
       style({
         opacity: 0,
@@ -12,17 +12,7 @@ export const lightSpeedIn = animation(
       }),
       style({
         opacity: 1,
-        transform: 'skewX(20deg)',
-        offset: 0.6,
-      }),
-      style({
-        opacity: 1,
-        transform: 'skewX(-5deg)',
-        offset: 0.8,
-      }),
-      style({
-        opacity: 1,
-        transform: 'none',
+        transform: 'translate3d(0, 0, 0) skewX(0)',
         offset: 1,
       }),
     ])

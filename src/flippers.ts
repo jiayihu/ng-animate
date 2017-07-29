@@ -5,7 +5,7 @@ export const flip = animation(
   [
     style({ 'backface-visibility': 'visible' }),
     animate(
-      '{{ timing }}s',
+      '{{ timing }}s ease-out',
       keyframes([
         style({
           transform: 'perspective(400px) rotate3d(0, 1, 0, -360deg)',
@@ -13,12 +13,12 @@ export const flip = animation(
         }),
         style({
           transform:
-            'perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg)',
+            'perspective(400px) scale3d(1.5, 1.5, 1.5) rotate3d(0, 1, 0, -190deg)',
           offset: 0.4,
         }),
         style({
           transform:
-            'perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg)',
+            'perspective(400px) scale3d(1.5, 1.5, 1.5) rotate3d(0, 1, 0, -170deg)',
           offset: 0.5,
         }),
         style({
@@ -44,7 +44,7 @@ function flipIn(rotateX, rotateY) {
     [
       style({ 'backface-visibility': 'visible' }),
       animate(
-        '{{ timing }}s',
+        '{{ timing }}s ease-in',
         keyframes([
           style({
             opacity: 0,
@@ -53,12 +53,12 @@ function flipIn(rotateX, rotateY) {
             offset: 0,
           }),
           style({
+            opacity: 1,
             transform:
               'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -20deg)',
             offset: 0.4,
           }),
           style({
-            opacity: 1,
             transform:
               'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 10deg)',
             offset: 0.6,
@@ -69,7 +69,7 @@ function flipIn(rotateX, rotateY) {
             offset: 0.8,
           }),
           style({
-            transform: 'perspective(400px)',
+            transform: 'perspective(400px) rotate3d(0, 0, 0, 0)',
             offset: 1,
           }),
         ])

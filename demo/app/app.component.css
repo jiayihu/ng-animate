@@ -20,7 +20,12 @@ small {
   color: #666;
   cursor: pointer;
   font-size: inherit;
+  margin-top: .5rem;
   padding: .5rem 1rem;
+}
+
+.btn:not(:last-child) {
+  margin-right: .5rem;
 }
 
 .container {
@@ -32,7 +37,7 @@ small {
 }
 
 .content {
-  max-width: 50rem;
+  max-width: 60rem;
   text-align: center;
 }
 
