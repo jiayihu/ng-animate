@@ -12,7 +12,7 @@
         "paths": {}
     },
     "exclude": [
-        "dist",
+        "lib",
         "node_modules"
     ],
     "compileOnSave": false,

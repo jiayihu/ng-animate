@@ -69,7 +69,7 @@ import {
   zoomOutUp,
   zoomOutLeft,
   zoomOutRight,
-} from '../../src/index';
+} from '../../lib/index';
 
 @Component({
   selector: 'demo-app',

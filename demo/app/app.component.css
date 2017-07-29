@@ -1,13 +1,3 @@
-body {
-  background: #3494e6;
-  background: linear-gradient(to right, #3494e6, #ec6ead);
-  color: #fff;
-  font-family: 'helvetica neue', helvetica, sans-serif;
-  font-size: 15px;
-  margin: 0;
-  padding-bottom: 4rem;
-}
-
 small {
   font-size: 0.875rem;
   font-weight: normal;

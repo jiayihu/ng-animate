@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const AotPlugin = require('@ngtools/webpack').AotPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const root = {
@@ -22,16 +21,6 @@ const prodPlugins = [
   new CopyWebpackPlugin([
     { from: path.join(root.src, 'assets'), to: 'assets' },
   ]),
-  new AotPlugin({
-    tsConfigPath: 'tsconfig.json',
-    entryModule: path.resolve(__dirname, 'demo/app/app.module#AppModule'),
-    compilerOptions: {
-      angularCompilerOptions: {
-        genDir: 'demo-dist',
-        skipMetadataEmit: true,
-      },
-    },
-  }),
   new webpack.optimize.UglifyJsPlugin({
     sourceMap: false,
     output: { comments: false },
@@ -59,7 +48,7 @@ module.exports = {
       }
     : {},
   devtool: 'eval',
-  entry: path.join(root.src, IS_DEV ? 'main.ts' : 'main-prod.ts'),
+  entry: path.join(root.src, 'main.ts'),
   output: {
     path: root.dest,
     filename: 'js/main.js',
@@ -71,9 +60,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: IS_DEV
-          ? ['ts-loader', 'angular2-template-loader']
-          : '@ngtools/webpack',
+        use: ['ts-loader', 'angular2-template-loader'],
         exclude: IS_DEV ? [/node_modules/] : [],
       },
       {
