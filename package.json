@@ -1,15 +1,15 @@
 {
   "name": "ng-animate",
   "version": "0.1.0",
-  "description": "A set of easy to use Angular 4+ animations",
-  "main": "index.js",
+  "description": "A library of cool, reusable and flexible animations for Angular",
+  "main": "lib/index.js",
   "files": [
-    "dist/index.js"
+    "lib"
   ],
   "scripts": {
-    "build": "npm run clean && tsc src/index.ts --outDir dist",
+    "build": "npm run clean && tsc ./src/index.ts --declaration --lib es6 --outDir lib",
     "build:demo": "rimraf demo-dist && cross-env NODE_ENV=production webpack",
-    "clean": "rimraf dist",
+    "clean": "rimraf lib",
     "start": "webpack-dev-server --inline",
     "lint": "tslint \"./src/**/*.ts\"",
     "prepush": "npm run lint"
@@ -65,6 +65,6 @@
   "peerDependencies": {
     "@angular/animations": "^4.2.0",
     "@angular/core": "^4.2.0",
-    "web-animations-js": "^2.2.2"
+    "web-animations-js": "^2.0.0"
   }
 }

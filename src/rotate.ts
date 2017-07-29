@@ -1,4 +1,10 @@
-import { animation, style, animate, keyframes } from '@angular/animations';
+import {
+  AnimationReferenceMetadata,
+  animation,
+  style,
+  animate,
+  keyframes,
+} from '@angular/animations';
 import { DEFAULT_TIMING, transformAxis } from './utils';
 
 function rotate(fromOpacity: number, toOpacity: number) {

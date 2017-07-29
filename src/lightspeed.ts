@@ -1,4 +1,10 @@
-import { animation, style, animate, keyframes } from '@angular/animations';
+import {
+  AnimationReferenceMetadata,
+  animation,
+  style,
+  animate,
+  keyframes,
+} from '@angular/animations';
 import { DEFAULT_TIMING } from './utils';
 
 export const lightSpeedIn = animation(

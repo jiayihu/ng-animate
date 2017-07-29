@@ -1,0 +1,11 @@
+import { AnimationReferenceMetadata } from '@angular/animations';
+export declare const zoomIn: AnimationReferenceMetadata;
+export declare const zoomInDown: AnimationReferenceMetadata;
+export declare const zoomInUp: AnimationReferenceMetadata;
+export declare const zoomInLeft: AnimationReferenceMetadata;
+export declare const zoomInRight: AnimationReferenceMetadata;
+export declare const zoomOut: AnimationReferenceMetadata;
+export declare const zoomOutDown: AnimationReferenceMetadata;
+export declare const zoomOutUp: AnimationReferenceMetadata;
+export declare const zoomOutLeft: AnimationReferenceMetadata;
+export declare const zoomOutRight: AnimationReferenceMetadata;
