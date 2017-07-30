@@ -1,4 +1,4 @@
-# ng-animate
+# 🌙 ng-animate
 
 [![npm](https://img.shields.io/npm/v/ng-animate.svg)](https://www.npmjs.com/package/ng-animate)
 
@@ -18,7 +18,7 @@ npm install ng-animate --save
 
 ## Example
 
-Import the animation within the your Angular component, using [useAnimation](https://angular.io/api/animations/useAnimation):
+Import the animation from the package and pass it to your Angular component using [useAnimation](https://angular.io/api/animations/useAnimation):
 
 ```javascript
 // my-component.component.ts
@@ -42,7 +42,7 @@ export class MyComponent {
 <div [@bounce]="bounce"></div>
 ```
 
-**Note**: Make sure to have included `BrowserAnimationsModule` in your `AppModule` and [web-animation.js](https://github.com/web-animations/web-animations-js) polyfill.
+**Note**: Make sure to have included `BrowserAnimationsModule` in your `AppModule` and the [web-animation.js](https://github.com/web-animations/web-animations-js) polyfill.
 
 It's also possible to import only a subset of the animations:
 
@@ -79,7 +79,7 @@ Using a template can achieve the same result, but you'll have access to the comp
 Many of the animations support also other params like `scale`, `fromOpacity`, `toOpacity` and much more, allowing extremely flexible usage and customisation if needed. 
 
 Single letters like `a, b, c, d` are used for the steps of some animations: `a` is at the starting value, `d` is at the end.  
-The animated property they refer to depends on the animation and the direction (down/up or left/right).
+The animated property they refer to depends on the animation and the direction: usually `translate` on axis Y from `-Down/-Up`, axis X for `-Left/-Right`.
 
 ```javascript
 useAnimation(bounceInDown, {
@@ -133,22 +133,14 @@ All fading animations have additional params `fromOpacity, toOpacity` for `opaci
 
 - `fadeIn`
 - `fadeInDown`
-- `fadeInDownBig`
 - `fadeInLeft`
-- `fadeInLeftBig`
 - `fadeInRight`
-- `fadeInRightBig`
 - `fadeInUp`
-- `fadeInUpBig`
 - `fadeOut`
 - `fadeOutDown`
-- `fadeOutDownBig`
 - `fadeOutLeft`
-- `fadeOutLeftBig`
 - `fadeOutRight`
-- `fadeOutRightBig`
 - `fadeOutUp`
-- `fadeOutUpBig`
 
 ### Sliding
 
