@@ -1,11 +1,7 @@
 bower_components
 node_modules
 
-examples/ast.json
-examples-dist
-!dist/uikit-vendor.css
-dist/*
-aot-tmp
+demo-dist
 
 # Editor configs
 .idea
