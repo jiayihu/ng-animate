@@ -74,30 +74,9 @@ Using a template can achieve the same result, but you'll have access to the comp
 <div [@bounce]="{ value: bounce, params: { timing: myTiming || 5 } }"></div>
 ```
 
-### Advanced params
-
-Many of the animations support also other params like `scale`, `fromOpacity`, `toOpacity` and much more, allowing extremely flexible usage and customisation if needed. 
-
-Single letters like `a, b, c, d` are used for the steps of some animations: `a` is at the starting value, `d` is at the end.  
-The animated property they refer to depends on the animation and the direction: usually `translate` on axis Y from `-Down/-Up`, axis X for `-Left/-Right`.
-
-```javascript
-useAnimation(bounceInDown, {
-  params: {
-    timing: 5,
-
-    // Specify granular values for `translate` on axis Y during 'bounceInDown' 
-    a: '-3000px',
-    b: '25px',
-    c: '-10px',
-    d: '5px',
-  }
-})
-```
-
 ## Animations
 
-All the animations are organized by their group:
+All the animations are organized by their group. Many of them have additional params other than `timing`, refer to [Advanced Usage](#advanced-usage) for more details. Nevertheless you can probably ignore them if you're happy with how they are by default.
 
 ### Attention seekers
 
@@ -205,3 +184,24 @@ The following zooming animations have additional params `a, b` for `translate`
 - `zoomOutLeft`
 - `zoomOutRight`
 - `zoomOutUp`
+
+## Advanced params
+
+Many of the animations support also other params like `scale`, `fromOpacity`, `toOpacity` and much more, allowing extremely flexible usage and customisation if you're not happy with default values. 
+
+Single letters like `a, b, c, d` are used for the steps of some animations: `a` is at the starting value, `d` is at the end.  
+The animated property they refer to depends on the animation and the direction: usually `translate` on axis Y from `-Down/-Up`, axis X for `-Left/-Right`.
+
+```javascript
+useAnimation(bounceInDown, {
+  params: {
+    timing: 5,
+
+    // Specify granular values for `translate` on axis Y during 'bounceInDown' 
+    a: '-3000px',
+    b: '25px',
+    c: '-10px',
+    d: '5px',
+  }
+})
+```
