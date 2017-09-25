@@ -76,7 +76,7 @@ Using a template can achieve the same result, but you'll have access to the comp
 
 ## Animations
 
-All the animations are organized by their group. Many of them have additional params other than `timing`, refer to [Advanced Usage](#advanced-usage) for more details. Nevertheless you can probably ignore them if you're happy with how they are by default.
+All the animations are organized by their group. Many of them have additional params other than `timing`, refer to [Advanced Usage](#advanced-params) for more details. Nevertheless you can probably ignore them if you're happy with how they are by default.
 
 ### Attention seekers
 
