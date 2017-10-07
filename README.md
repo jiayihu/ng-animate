@@ -189,7 +189,7 @@ The following zooming animations have additional params `a, b` for `translate`
 
 Many of the animations support also other params like `scale`, `fromOpacity`, `toOpacity` and much more, allowing extremely flexible usage and customisation if you're not happy with default values. 
 
-Single letters like `a, b, c, d` are used for the steps of some animations: `a` is at the starting value, `d` is at the end.  
+Single letters like `a, b, c, d` are used for the steps of some animations: `a` is the starting value, `d` is the ending.  
 The animated property they refer to depends on the animation and the direction: usually `translate` on axis Y from `-Down/-Up`, axis X for `-Left/-Right`.
 
 ```javascript

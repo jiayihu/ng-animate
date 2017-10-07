@@ -7,7 +7,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "npm run clean && tsc ./src/index.ts --declaration --lib es6 --outDir lib",
+    "build": "npm run clean && ngc -p tsconfig-prod.json",
     "build:demo": "rimraf demo-dist && cross-env NODE_ENV=production webpack && cp index.html favicon.ico demo-dist",
     "clean": "rimraf lib",
     "deploy": "gh-pages -d demo-dist",
@@ -41,7 +41,7 @@
     "@angular/platform-browser-dynamic": "^4.3.2",
     "@angular/platform-server": "^4.3.2",
     "@angular/router": "^4.3.2",
-    "@ngtools/webpack": "^1.5.5",
+    "@ngtools/webpack": "^1.7.2",
     "@types/node": "^8.0.17",
     "angular2-template-loader": "^0.6.2",
     "codelyzer": "^3.1.2",

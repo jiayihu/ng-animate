@@ -2,6 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+/**
+ * @TODO: sometimes try with AOTPlugin to see if Angular's shit is better and supports Animations now
+ */
+
 const root = {
   src: path.join(__dirname, 'demo'),
   dest: path.join(__dirname, 'demo-dist'),
