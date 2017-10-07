@@ -11,7 +11,7 @@ export const hinge = animation(
   [
     style({ 'transform-origin': 'top left' }),
     animate(
-      '{{ timing }}s ease-in-out',
+      '{{ timing }}s {{ delay }}s ease-in-out',
       keyframes([
         style({
           transform: 'rotate3d(0, 0, 1, 80deg)',
@@ -39,14 +39,14 @@ export const hinge = animation(
     ),
   ],
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
 export const jackInTheBox = animation(
   [
     animate(
-      '{{ timing }}s',
+      '{{ timing }}s {{ delay }}s',
       keyframes([
         style({
           opacity: 0,
@@ -73,14 +73,14 @@ export const jackInTheBox = animation(
     ),
   ],
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
 export const rollIn = animation(
   [
     animate(
-      '{{ timing }}s',
+      '{{ timing }}s {{ delay }}s',
       keyframes([
         style({
           opacity: 0,
@@ -96,14 +96,14 @@ export const rollIn = animation(
     ),
   ],
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
 export const rollOut = animation(
   [
     animate(
-      '{{ timing }}s',
+      '{{ timing }}s {{ delay }}s',
       keyframes([
         style({
           opacity: 1,
@@ -118,6 +118,6 @@ export const rollOut = animation(
     ),
   ],
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );

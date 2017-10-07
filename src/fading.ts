@@ -15,6 +15,7 @@ function fade(fromOpacity: number, toOpacity: number) {
       const params = Object.assign(
         {
           timing: DEFAULT_TIMING,
+          delay: 0,
           fromOpacity,
           toOpacity,
         },
@@ -23,7 +24,7 @@ function fade(fromOpacity: number, toOpacity: number) {
 
       return animation(
         animate(
-          '{{ timing }}s',
+          '{{ timing }}s {{ delay }}s',
           keyframes([
             style({
               opacity: '{{ fromOpacity }}',

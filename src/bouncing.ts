@@ -9,7 +9,7 @@ import { DEFAULT_TIMING, transformAxis } from './utils';
 
 export const bounceIn = animation(
   animate(
-    '{{ timing }}s cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+    '{{ timing }}s {{ delay }}s cubic-bezier(0.215, 0.610, 0.355, 1.000)',
     keyframes([
       style({ opacity: 0, transform: 'scale3d(.3, .3, .3)', offset: 0 }),
       style({ transform: 'scale3d(1.1, 1.1, 1.1)', offset: 0.2 }),
@@ -23,18 +23,18 @@ export const bounceIn = animation(
       style({ opacity: 1, transform: 'scale3d(1, 1, 1)', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 function bounceInDirection(axis: 'x' | 'y') {
   const translate3d = transformAxis(axis, 'translate3d');
 
   return function(steps) {
-    const params = Object.assign({ timing: DEFAULT_TIMING }, steps);
+    const params = Object.assign({ timing: DEFAULT_TIMING, delay: 0 }, steps);
 
     return animation(
       animate(
-        '{{ timing }}s cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+        '{{ timing }}s {{ delay }}s cubic-bezier(0.215, 0.610, 0.355, 1.000)',
         keyframes([
           style({ opacity: 0, transform: translate3d('a'), offset: 0 }),
           style({ opacity: 1, transform: translate3d('b'), offset: 0.6 }),
@@ -81,7 +81,7 @@ export const bounceInRight = bounceInX({
 
 export const bounceOut = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'scale3d(.9, .9, .9)', offset: 0.2 }),
       style({
@@ -97,7 +97,7 @@ export const bounceOut = animation(
       style({ opacity: 0, transform: 'scale3d(.3, .3, .3)', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING, scale: 1.1 } }
+  { params: { timing: DEFAULT_TIMING, delay: 0, scale: 1.1 } }
 );
 
 function bounceOutDirection(axis: 'x' | 'y') {
@@ -105,11 +105,11 @@ function bounceOutDirection(axis: 'x' | 'y') {
 
   if (axis === 'y') {
     return function(steps) {
-      const params = Object.assign({ timing: DEFAULT_TIMING }, steps);
+      const params = Object.assign({ timing: DEFAULT_TIMING, delay: 0 }, steps);
 
       return animation(
         animate(
-          '{{ timing }}s',
+          '{{ timing }}s {{ delay }}s',
           keyframes([
             style({ transform: translate3d('a'), offset: 0.2 }),
             style({ opacity: 1, transform: translate3d('b'), offset: 0.4 }),
@@ -123,11 +123,11 @@ function bounceOutDirection(axis: 'x' | 'y') {
   }
 
   return function(steps) {
-    const params = Object.assign({}, { timing: DEFAULT_TIMING }, steps);
+    const params = Object.assign({ timing: DEFAULT_TIMING, delay: 0 }, steps);
 
     return animation(
       animate(
-        '{{ timing }}s',
+        '{{ timing }}s {{ delay }}s',
         keyframes([
           style({ opacity: 1, transform: translate3d('a'), offset: 0.2 }),
           style({ opacity: 0, transform: translate3d('b'), offset: 1 }),

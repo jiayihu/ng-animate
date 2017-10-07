@@ -10,7 +10,7 @@ import { DEFAULT_TIMING, transformAxis } from './utils';
 export const zoomIn = animation(
   [
     animate(
-      '{{ timing }}s',
+      '{{ timing }}s {{ delay }}s',
       keyframes([
         style({
           opacity: 0,
@@ -26,7 +26,7 @@ export const zoomIn = animation(
     ),
   ],
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
@@ -34,11 +34,11 @@ function zoomInDirection(axis: 'x' | 'y') {
   const translate3d = transformAxis(axis, 'translate3d');
 
   return function(steps) {
-    const params = Object.assign({ timing: DEFAULT_TIMING }, steps);
+    const params = Object.assign({ timing: DEFAULT_TIMING, delay: 0 }, steps);
 
     return animation(
       animate(
-        '{{ timing }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
+        '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
         keyframes([
           style({
             opacity: 0,
@@ -80,7 +80,7 @@ export const zoomInRight = zoomInX({
 export const zoomOut = animation(
   [
     animate(
-      '{{ timing }}s',
+      '{{ timing }}s {{ delay }}s',
       keyframes([
         style({
           opacity: 1,
@@ -99,7 +99,7 @@ export const zoomOut = animation(
     ),
   ],
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
@@ -107,11 +107,11 @@ function zoomOutDirection(axis: 'x' | 'y') {
   const translate3d = transformAxis(axis, 'translate3d');
 
   return function(steps) {
-    const params = Object.assign({ timing: DEFAULT_TIMING }, steps);
+    const params = Object.assign({ timing: DEFAULT_TIMING, delay: 0 }, steps);
 
     return animation(
       animate(
-        '{{ timing }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
+        '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
         keyframes([
           style({
             opacity: 1,

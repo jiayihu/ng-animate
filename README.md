@@ -52,7 +52,8 @@ import { bounce } from 'ng-animate/lib/bouncing';
 
 ### Animation params
 
-**All the animations** provided by `ng-animate` support at least an **optional** param `timing` to specify the animation duration. You can pass the `params` object using the Javascript API or within the component template:
+**All the animations** provided by `ng-animate` support at least two **optional** params `timing` and `delay` to specify the animation duration and delay. Default value for `timing` is usually `1`s and `0`s for `delay`.  
+You can pass the `params` object using the Javascript API or within the component template:
 
 ```javascript
 @Component({
@@ -60,8 +61,8 @@ import { bounce } from 'ng-animate/lib/bouncing';
   templateUrl: 'my-component.component.html',
   animations: [
     trigger('bounce', [transition('* => *', useAnimation(bounce, {
-      // Set the duration to 5seconds
-      params: { timing: 5 }
+      // Set the duration to 5seconds and delay to 2seconds
+      params: { timing: 5, delay: 2 }
     }))])
   ],
 })
@@ -71,12 +72,12 @@ export class MyComponent {}
 Using a template can achieve the same result, but you'll have access to the component context:
 
 ```html
-<div [@bounce]="{ value: bounce, params: { timing: myTiming || 5 } }"></div>
+<div [@bounce]="{ value: bounce, params: { timing: myTiming || 5, delay: myDelay || 2 } }"></div>
 ```
 
 ## Animations
 
-All the animations are organized by their group. Many of them have additional params other than `timing`, refer to [Advanced Usage](#advanced-params) for more details. Nevertheless you can probably ignore them if you're happy with how they are by default.
+All the animations are organized by their group. Many of them have additional params other than `timing/delay`: refer to [Advanced Usage](#advanced-params) for more details. Nevertheless you can probably ignore them if you're happy with how they are by default.
 
 ### Attention seekers
 

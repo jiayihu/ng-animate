@@ -11,7 +11,7 @@ export const flip = animation(
   [
     style({ 'backface-visibility': 'visible' }),
     animate(
-      '{{ timing }}s ease-out',
+      '{{ timing }}s {{ delay }}s ease-out',
       keyframes([
         style({
           transform: 'perspective(400px) rotate3d(0, 1, 0, -360deg)',
@@ -39,18 +39,18 @@ export const flip = animation(
     ),
   ],
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
 function flipIn(rotateX, rotateY) {
-  const params = { timing: DEFAULT_TIMING, rotateX, rotateY };
+  const params = { timing: DEFAULT_TIMING, delay: 0, rotateX, rotateY };
 
   return animation(
     [
       style({ 'backface-visibility': 'visible' }),
       animate(
-        '{{ timing }}s ease-in',
+        '{{ timing }}s {{ delay }}s ease-in',
         keyframes([
           style({
             opacity: 0,
@@ -89,13 +89,13 @@ export const flipInX = flipIn(1, 0);
 export const flipInY = flipIn(0, 1);
 
 function flipOut(rotateX, rotateY) {
-  const params = { timing: DEFAULT_TIMING, rotateX, rotateY };
+  const params = { timing: DEFAULT_TIMING, delay: 0, rotateX, rotateY };
 
   return animation(
     [
       style({ 'backface-visibility': 'visible' }),
       animate(
-        '{{ timing }}s',
+        '{{ timing }}s {{ delay }}s',
         keyframes([
           style({
             transform: 'perspective(400px)',

@@ -11,7 +11,7 @@ export const bounce = animation(
   [
     style({ transform: 'translate3d(0, 0, 0)' }),
     animate(
-      '{{ timing }}s',
+      '{{ timing }}s {{ delay }}s',
       keyframes([
         style({ transform: 'translate3d(0, 0, 0)', offset: 0.2 }),
         style({ transform: 'translate3d(0, -30px, 0)', offset: 0.4 }),
@@ -22,12 +22,12 @@ export const bounce = animation(
       ])
     ),
   ],
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 export const flash = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ opacity: 1 }),
       style({ opacity: 0 }),
@@ -36,24 +36,24 @@ export const flash = animation(
       style({ opacity: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 export const pulse = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'scale3d(1, 1, 1)' }),
       style({ transform: 'scale3d({{ scale }}, {{ scale }}, {{ scale }})' }),
       style({ transform: 'scale3d(1, 1, 1)' }),
     ])
   ),
-  { params: { scale: 1.25, timing: DEFAULT_TIMING } }
+  { params: { scale: 1.25, timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 export const rubberBand = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'scale3d(1, 1, 1)', offset: 0 }),
       style({ transform: 'scale3d(1.25, 0.75, 1)', offset: 0.3 }),
@@ -64,12 +64,12 @@ export const rubberBand = animation(
       style({ transform: 'scale3d(1, 1, 1)', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 export const shake = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'translate3d(0, 0, 0)', offset: 0 }),
       style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.1 }),
@@ -84,12 +84,12 @@ export const shake = animation(
       style({ transform: 'translate3d(0, 0, 0)', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 export const swing = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'rotate3d(0, 0, 1, 15deg)', offset: 0.2 }),
       style({ transform: 'rotate3d(0, 0, 1, -10deg)', offset: 0.4 }),
@@ -98,12 +98,12 @@ export const swing = animation(
       style({ transform: 'rotate3d(0, 0, 1, 0deg)', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 export const tada = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'scale3d(1, 1, 1)', offset: 0 }),
       style({
@@ -145,12 +145,12 @@ export const tada = animation(
       style({ transform: 'scale3d(1, 1, 1)', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 export const wobble = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'none', offset: 0 }),
       style({
@@ -176,12 +176,12 @@ export const wobble = animation(
       style({ transform: 'none', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
 export const jello = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'none', offset: 0 }),
       style({ transform: 'none', offset: 0.11 }),
@@ -204,5 +204,5 @@ export const jello = animation(
       style({ transform: 'none', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING } }
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );

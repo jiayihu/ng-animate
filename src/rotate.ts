@@ -14,6 +14,7 @@ function rotate(fromOpacity: number, toOpacity: number) {
     return function(degrees) {
       const params = {
         timing: DEFAULT_TIMING,
+        delay: 0,
         fromOpacity,
         toOpacity,
         origin,
@@ -22,7 +23,7 @@ function rotate(fromOpacity: number, toOpacity: number) {
 
       return animation(
         animate(
-          '{{ timing }}s',
+          '{{ timing }}s {{ delay }}s',
           keyframes([
             style({
               'transform-origin': '{{ origin }}',

@@ -9,7 +9,7 @@ import { DEFAULT_TIMING } from './utils';
 
 export const lightSpeedIn = animation(
   animate(
-    '{{ timing }}s',
+    '{{ timing }}s {{ delay }}s',
     keyframes([
       style({
         opacity: 0,
@@ -24,13 +24,13 @@ export const lightSpeedIn = animation(
     ])
   ),
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
 export const lightSpeedOut = animation(
   animate(
-    '{{ timing }}s ease-out',
+    '{{ timing }}s {{ delay }}s ease-out',
     keyframes([
       style({
         opacity: 1,
@@ -44,6 +44,6 @@ export const lightSpeedOut = animation(
     ])
   ),
   {
-    params: { timing: DEFAULT_TIMING },
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
