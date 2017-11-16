@@ -19,9 +19,5 @@
         "node_modules"
     ],
     "compileOnSave": false,
-    "buildOnSave": false,
-    "angularCompilerOptions": {
-      "genDir": "aot",
-      "skipTemplateCodegen": true
-    }
+    "buildOnSave": false
 }

@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /**
@@ -22,6 +23,16 @@ const devPlugins = [
   ),
 ];
 const prodPlugins = [
+  new AngularCompilerPlugin({
+    tsConfigPath: 'tsconfig.json',
+    entryModule: path.resolve(__dirname, 'demo/app/app.module#AppModule'),
+    compilerOptions: {
+      angularCompilerOptions: {
+        genDir: 'demo-dist',
+        skipMetadataEmit: true,
+      },
+    },
+  }),
   new CopyWebpackPlugin([
     { from: path.join(root.src, 'assets'), to: 'assets' },
   ]),
@@ -43,6 +54,17 @@ const prodPlugins = [
   }),
 ];
 
+const tsLoader = IS_DEV
+  ? {
+      test: /\.tsx?$/,
+      use: ['ts-loader', 'angular2-template-loader'],
+      exclude: [/node_modules/],
+    }
+  : {
+      test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+      loader: '@ngtools/webpack',
+    };
+
 module.exports = {
   devServer: IS_DEV
     ? {
@@ -52,7 +74,7 @@ module.exports = {
       }
     : {},
   devtool: 'eval',
-  entry: path.join(root.src, 'main.ts'),
+  entry: path.join(root.src, IS_DEV ? 'main.ts' : 'main-prod.ts'),
   output: {
     path: root.dest,
     filename: 'js/main.js',
@@ -62,11 +84,7 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        use: ['ts-loader', 'angular2-template-loader'],
-        exclude: IS_DEV ? [/node_modules/] : [],
-      },
+      tsLoader,
       {
         test: /\.html$/,
         use: 'raw-loader',
