@@ -44,9 +44,9 @@ function fade(fromOpacity: number, toOpacity: number) {
   };
 }
 
-const fadeInDirection = fade(0, 1);
-const fadeInX = fadeInDirection('x');
-const fadeInY = fadeInDirection('y');
+export const fadeInDirection = fade(0, 1);
+export const fadeInX = fadeInDirection('x');
+export const fadeInY = fadeInDirection('y');
 
 export const fadeIn = fadeInX({ a: 0, b: 0 });
 export const fadeInDown = fadeInY({ a: '-100%', b: 0 });
@@ -54,9 +54,9 @@ export const fadeInUp = fadeInY({ a: '100%', b: 0 });
 export const fadeInLeft = fadeInX({ a: '-100%', b: 0 });
 export const fadeInRight = fadeInX({ a: '100%', b: 0 });
 
-const fadeOutDirection = fade(1, 0);
-const fadeOutX = fadeOutDirection('x');
-const fadeOutY = fadeOutDirection('y');
+export const fadeOutDirection = fade(1, 0);
+export const fadeOutX = fadeOutDirection('x');
+export const fadeOutY = fadeOutDirection('y');
 
 export const fadeOut = fadeOutX({ a: 0, b: 0 });
 export const fadeOutDown = fadeOutY({ a: '-100%', b: 0 });
@@ -64,9 +64,9 @@ export const fadeOutUp = fadeOutY({ a: '100%', b: 0 });
 export const fadeOutLeft = fadeOutX({ a: '-100%', b: 0 });
 export const fadeOutRight = fadeOutX({ a: '100%', b: 0 });
 
-const slideDirection = fade(1, 1);
-const slideX = slideDirection('x');
-const slideY = slideDirection('y');
+export const slideDirection = fade(1, 1);
+export const slideX = slideDirection('x');
+export const slideY = slideDirection('y');
 
 export const slideInUp = slideY({ a: '-100%', b: 0 });
 export const slideInDown = slideY({ a: '100%', b: 0 });
