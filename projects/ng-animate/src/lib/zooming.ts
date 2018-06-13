@@ -30,7 +30,7 @@ export const zoomIn = animation(
   }
 );
 
-export function zoomInY(steps) {
+export function zoomInY(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
@@ -47,11 +47,11 @@ export function zoomInY(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export function zoomInX(steps) {
+export function zoomInX(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
@@ -68,26 +68,14 @@ export function zoomInX(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export const zoomInDown = zoomInY({
-  a: '-1000px',
-  b: '10px'
-});
-export const zoomInUp = zoomInY({
-  a: '1000px',
-  b: '-10px'
-});
-export const zoomInLeft = zoomInX({
-  a: '-1000px',
-  b: '10px'
-});
-export const zoomInRight = zoomInX({
-  a: '1000px',
-  b: '-10px'
-});
+export const zoomInDown = zoomInY('-1000px', '10px');
+export const zoomInUp = zoomInY('1000px', '-10px');
+export const zoomInLeft = zoomInX('-1000px', '10px');
+export const zoomInRight = zoomInX('1000px', '-10px');
 
 export const zoomOut = animation(
   [
@@ -115,7 +103,7 @@ export const zoomOut = animation(
   }
 );
 
-export function zoomOutY(steps) {
+export function zoomOutY(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
@@ -132,11 +120,11 @@ export function zoomOutY(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export function zoomOutX(steps) {
+export function zoomOutX(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
@@ -153,23 +141,11 @@ export function zoomOutX(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export const zoomOutDown = zoomOutY({
-  a: '-60px',
-  b: '2000px'
-});
-export const zoomOutUp = zoomOutY({
-  a: '60px',
-  b: '-2000px'
-});
-export const zoomOutLeft = zoomOutX({
-  a: '42px',
-  b: '-2000px'
-});
-export const zoomOutRight = zoomOutX({
-  a: '-42px',
-  b: '2000px'
-});
+export const zoomOutDown = zoomOutY('-60px', '2000px');
+export const zoomOutUp = zoomOutY('60px', '-2000px');
+export const zoomOutLeft = zoomOutX('42px', '-2000px');
+export const zoomOutRight = zoomOutX('-42px', '2000px');

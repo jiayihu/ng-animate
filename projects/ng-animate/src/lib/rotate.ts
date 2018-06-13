@@ -65,6 +65,6 @@ export function rotateOutDirection(origin, degrees) {
 
 export const rotateOut = rotateOutDirection('center', '200deg');
 export const rotateOutDownLeft = rotateOutDirection('left bottom', '45deg');
-export const rotateOutDownRight = rotateInDirection('right bottom', '-45deg');
+export const rotateOutDownRight = rotateOutDirection('right bottom', '-45deg');
 export const rotateOutUpLeft = rotateOutDirection('left bottom', '-45deg');
-export const rotateOutUpRight = rotateInDirection('right bottom', '90deg');
+export const rotateOutUpRight = rotateOutDirection('right bottom', '90deg');

@@ -7,7 +7,7 @@ import {
 } from '@angular/animations';
 import { DEFAULT_TIMING } from './utils';
 
-export function fadeInX(steps) {
+export function fadeInX(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s',
@@ -24,11 +24,11 @@ export function fadeInX(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export function fadeInY(steps) {
+export function fadeInY(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s',
@@ -45,17 +45,17 @@ export function fadeInY(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export const fadeIn = fadeInX({ a: 0, b: 0 });
-export const fadeInDown = fadeInY({ a: '-100%', b: 0 });
-export const fadeInUp = fadeInY({ a: '100%', b: 0 });
-export const fadeInLeft = fadeInX({ a: '-100%', b: 0 });
-export const fadeInRight = fadeInX({ a: '100%', b: 0 });
+export const fadeIn = fadeInX(0, 0);
+export const fadeInDown = fadeInY('-100%', 0);
+export const fadeInUp = fadeInY('100%', 0);
+export const fadeInLeft = fadeInX('-100%', 0);
+export const fadeInRight = fadeInX('100%', 0);
 
-export function fadeOutX(steps) {
+export function fadeOutX(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s',
@@ -72,11 +72,11 @@ export function fadeOutX(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export function fadeOutY(steps) {
+export function fadeOutY(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s',
@@ -93,17 +93,17 @@ export function fadeOutY(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export const fadeOut = fadeOutX({ a: 0, b: 0 });
-export const fadeOutDown = fadeOutY({ a: '-100%', b: 0 });
-export const fadeOutUp = fadeOutY({ a: '100%', b: 0 });
-export const fadeOutLeft = fadeOutX({ a: '-100%', b: 0 });
-export const fadeOutRight = fadeOutX({ a: '100%', b: 0 });
+export const fadeOut = fadeOutX(0, 0);
+export const fadeOutDown = fadeOutY('-100%', 0);
+export const fadeOutUp = fadeOutY('100%', 0);
+export const fadeOutLeft = fadeOutX('-100%', 0);
+export const fadeOutRight = fadeOutX('100%', 0);
 
-export function slideX(steps) {
+export function slideX(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s',
@@ -118,11 +118,11 @@ export function slideX(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export function slideY(steps) {
+export function slideY(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s',
@@ -137,15 +137,15 @@ export function slideY(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export const slideInUp = slideY({ a: '-100%', b: 0 });
-export const slideInDown = slideY({ a: '100%', b: 0 });
-export const slideInLeft = slideX({ a: '-100%', b: 0 });
-export const slideInRight = slideX({ a: '100%', b: 0 });
-export const slideOutUp = slideY({ a: 0, b: '-100%' });
-export const slideOutDown = slideY({ a: 0, b: '100%' });
-export const slideOutLeft = slideX({ a: 0, b: '-100%' });
-export const slideOutRight = slideX({ a: 0, b: '100%' });
+export const slideInUp = slideY('-100%', 0);
+export const slideInDown = slideY('100%', 0);
+export const slideInLeft = slideX('-100%', 0);
+export const slideInRight = slideX('100%', 0);
+export const slideOutUp = slideY(0, '-100%');
+export const slideOutDown = slideY(0, '100%');
+export const slideOutLeft = slideX(0, '-100%');
+export const slideOutRight = slideX(0, '100%');

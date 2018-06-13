@@ -26,7 +26,7 @@ export const bounceIn = animation(
   { params: { timing: DEFAULT_TIMING, delay: 0 } }
 );
 
-export function bounceInY(steps: Object) {
+export function bounceInY(a, b, c, d) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.215, 0.610, 0.355, 1.000)',
@@ -46,11 +46,20 @@ export function bounceInY(steps: Object) {
         style({ opacity: 1, transform: 'none', offset: 1 })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    {
+      params: {
+        timing: DEFAULT_TIMING,
+        delay: 0,
+        a,
+        b,
+        c,
+        d
+      }
+    }
   );
 }
 
-export function bounceInX(steps: Object) {
+export function bounceInX(a, b, c, d) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.215, 0.610, 0.355, 1.000)',
@@ -70,37 +79,26 @@ export function bounceInX(steps: Object) {
         style({ opacity: 1, transform: 'none', offset: 1 })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    {
+      params: {
+        timing: DEFAULT_TIMING,
+        delay: 0,
+        a,
+        b,
+        c,
+        d
+      }
+    }
   );
 }
 
-export const bounceInDown = bounceInY({
-  a: '-3000px',
-  b: '25px',
-  c: '-10px',
-  d: '5px'
-});
+export const bounceInDown = bounceInY('-3000px', '25px', '-10px', '5px');
 
-export const bounceInUp = bounceInY({
-  a: '3000px',
-  b: '-25px',
-  c: '10px',
-  d: '-5px'
-});
+export const bounceInUp = bounceInY('3000px', '-25px', '10px', '-5px');
 
-export const bounceInLeft = bounceInX({
-  a: '-3000px',
-  b: '25px',
-  c: '-10px',
-  d: '5px'
-});
+export const bounceInLeft = bounceInX('-3000px', '25px', '-10px', '5px');
 
-export const bounceInRight = bounceInX({
-  a: '3000px',
-  b: '-25px',
-  c: '10px',
-  d: '-5px'
-});
+export const bounceInRight = bounceInX('3000px', '-25px', '10px', '-5px');
 
 export const bounceOut = animation(
   animate(
@@ -123,7 +121,7 @@ export const bounceOut = animation(
   { params: { timing: DEFAULT_TIMING, delay: 0, scale: 1.1 } }
 );
 
-export function bounceOutY(steps) {
+export function bounceOutY(a, b, c, d) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s',
@@ -146,11 +144,20 @@ export function bounceOutY(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    {
+      params: {
+        timing: DEFAULT_TIMING,
+        delay: 0,
+        a,
+        b,
+        c,
+        d
+      }
+    }
   );
 }
 
-export function bounceOutX(steps) {
+export function bounceOutX(a, b) {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s',
@@ -167,30 +174,14 @@ export function bounceOutX(steps) {
         })
       ])
     ),
-    { params: { timing: DEFAULT_TIMING, delay: 0, ...steps } }
+    { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export const bounceOutDown = bounceOutY({
-  a: '10px',
-  b: '-20px',
-  c: '-20px',
-  d: '2000px'
-});
+export const bounceOutDown = bounceOutY('10px', '-20px', '-20px', '2000px');
 
-export const bounceOutUp = bounceOutY({
-  a: '-10px',
-  b: '20px',
-  c: '20px',
-  d: '-2000px'
-});
+export const bounceOutUp = bounceOutY('-10px', '20px', '20px', '-2000px');
 
-export const bounceOutLeft = bounceOutX({
-  a: '20px',
-  b: '-2000px'
-});
+export const bounceOutLeft = bounceOutX('20px', '-2000px');
 
-export const bounceOutRight = bounceOutX({
-  a: '-20px',
-  b: '2000px'
-});
+export const bounceOutRight = bounceOutX('-20px', '2000px');
