@@ -68,8 +68,8 @@ import {
   zoomOutDown,
   zoomOutUp,
   zoomOutLeft,
-  zoomOutRight,
-} from '../../lib/index';
+  zoomOutRight
+} from '../../../lib/index';
 
 @Component({
   selector: 'demo-app',
@@ -92,7 +92,7 @@ import {
     trigger('bounceInLeft', [transition('* => *', useAnimation(bounceInLeft))]),
     trigger('bounceOut', [transition('* => *', useAnimation(bounceOut))]),
     trigger('bounceOutRight', [
-      transition('* => *', useAnimation(bounceOutRight)),
+      transition('* => *', useAnimation(bounceOutRight))
     ]),
     trigger('bounceOutUp', [transition('* => *', useAnimation(bounceOutUp))]),
 
@@ -107,7 +107,7 @@ import {
     trigger('slideInLeft', [transition('* => *', useAnimation(slideInLeft))]),
     trigger('slideOutUp', [transition('* => *', useAnimation(slideOutUp))]),
     trigger('slideOutRight', [
-      transition('* => *', useAnimation(slideOutRight)),
+      transition('* => *', useAnimation(slideOutRight))
     ]),
 
     trigger('flip', [transition('* => *', useAnimation(flip))]),
@@ -118,22 +118,22 @@ import {
 
     trigger('lightSpeedIn', [transition('* => *', useAnimation(lightSpeedIn))]),
     trigger('lightSpeedOut', [
-      transition('* => *', useAnimation(lightSpeedOut)),
+      transition('* => *', useAnimation(lightSpeedOut))
     ]),
 
     trigger('rotateIn', [transition('* => *', useAnimation(rotateIn))]),
     trigger('rotateInDownLeft', [
-      transition('* => *', useAnimation(rotateInDownLeft)),
+      transition('* => *', useAnimation(rotateInDownLeft))
     ]),
     trigger('rotateInUpRight', [
-      transition('* => *', useAnimation(rotateInUpRight)),
+      transition('* => *', useAnimation(rotateInUpRight))
     ]),
     trigger('rotateOut', [transition('* => *', useAnimation(rotateOut))]),
     trigger('rotateOutUpLeft', [
-      transition('* => *', useAnimation(rotateOutUpLeft)),
+      transition('* => *', useAnimation(rotateOutUpLeft))
     ]),
     trigger('rotateOutDownRight', [
-      transition('* => *', useAnimation(rotateOutDownRight)),
+      transition('* => *', useAnimation(rotateOutDownRight))
     ]),
 
     trigger('hinge', [transition('* => *', useAnimation(hinge))]),
@@ -146,8 +146,8 @@ import {
     trigger('zoomInDown', [transition('* => *', useAnimation(zoomInDown))]),
     trigger('zoomOut', [transition('* => *', useAnimation(zoomOut))]),
     trigger('zoomOutUp', [transition('* => *', useAnimation(zoomOutUp))]),
-    trigger('zoomOutRight', [transition('* => *', useAnimation(zoomOutRight))]),
-  ],
+    trigger('zoomOutRight', [transition('* => *', useAnimation(zoomOutRight))])
+  ]
 })
 export class AppComponent {
   attentionSeekers = [
@@ -159,7 +159,7 @@ export class AppComponent {
     'swing',
     'tada',
     'wobble',
-    'jello',
+    'jello'
   ];
 
   bouncing = [
@@ -168,7 +168,7 @@ export class AppComponent {
     'bounceInLeft',
     'bounceOut',
     'bounceOutUp',
-    'bounceOutRight',
+    'bounceOutRight'
   ];
 
   fading = [
@@ -177,7 +177,7 @@ export class AppComponent {
     'fadeInLeft',
     'fadeOut',
     'fadeOutUp',
-    'fadeOutRight',
+    'fadeOutRight'
   ];
 
   sliding = ['slideInDown', 'slideInLeft', 'slideOutUp', 'slideOutRight'];
@@ -192,7 +192,7 @@ export class AppComponent {
     'rotateInUpRight',
     'rotateOut',
     'rotateOutUpLeft',
-    'rotateOutDownRight',
+    'rotateOutDownRight'
   ];
 
   specials = ['hinge', 'jackInTheBox', 'rollIn', 'rollOut'];
@@ -203,7 +203,7 @@ export class AppComponent {
     'zoomInLeft',
     'zoomOut',
     'zoomOutUp',
-    'zoomOutRight',
+    'zoomOutRight'
   ];
 
   animate(name: 'string') {
