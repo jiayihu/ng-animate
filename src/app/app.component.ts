@@ -150,6 +150,16 @@ import {
   ]
 })
 export class AppComponent {
+  bounce = false;
+  flash = false;
+  pulse = false;
+  rubberBand = false;
+  shake = false;
+  swing = false;
+  tada = false;
+  wobble = false;
+  jello = false;
+
   attentionSeekers = [
     'bounce',
     'flash',
@@ -162,6 +172,15 @@ export class AppComponent {
     'jello'
   ];
 
+  // ==================
+
+  bounceIn = false;
+  bounceInDown = false;
+  bounceInLeft = false;
+  bounceOut = false;
+  bounceOutUp = false;
+  bounceOutRight = false;
+
   bouncing = [
     'bounceIn',
     'bounceInDown',
@@ -170,6 +189,17 @@ export class AppComponent {
     'bounceOutUp',
     'bounceOutRight'
   ];
+
+  // ==================
+
+  fadeIn = false;
+  fadeInDown = false;
+  fadeInLeft = false;
+  fadeOut = false;
+  fadeOutUp = false;
+  fadeOutRight = false;
+
+  // ==================
 
   fading = [
     'fadeIn',
@@ -180,11 +210,40 @@ export class AppComponent {
     'fadeOutRight'
   ];
 
+  // ==================
+
+  slideInDown = false;
+  slideInLeft = false;
+  slideOutUp = false;
+  slideOutRight = false;
+
   sliding = ['slideInDown', 'slideInLeft', 'slideOutUp', 'slideOutRight'];
+
+  // ==================
+
+  flip = false;
+  flipInX = false;
+  flipInY = false;
+  flipOutX = false;
+  flipOutY = false;
 
   flippers = ['flip', 'flipInX', 'flipInY', 'flipOutX', 'flipOutY'];
 
+  // ==================
+
+  lightSpeedIn = false;
+  lightSpeedOut = false;
+
   lightSpeed = ['lightSpeedIn', 'lightSpeedOut'];
+
+  // ==================
+
+  rotateIn = false;
+  rotateInDownLeft = false;
+  rotateInUpRight = false;
+  rotateOut = false;
+  rotateOutUpLeft = false;
+  rotateOutDownRight = false;
 
   rotate = [
     'rotateIn',
@@ -195,7 +254,23 @@ export class AppComponent {
     'rotateOutDownRight'
   ];
 
+  // ==================
+
+  hinge = false;
+  jackInTheBox = false;
+  rollIn = false;
+  rollOut = false;
+
   specials = ['hinge', 'jackInTheBox', 'rollIn', 'rollOut'];
+
+  // ==================
+
+  zoomIn = false;
+  zoomInDown = false;
+  zoomInLeft = false;
+  zoomOut = false;
+  zoomOutUp = false;
+  zoomOutRight = false;
 
   zooming = [
     'zoomIn',
