@@ -1,53 +1,52 @@
 {
-  "name": "ng-animate",
-  "version": "0.3.1",
-  "description": "A library of cool, reusable and flexible animations for Angular",
-  "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
+  "name": "demo",
+  "version": "0.0.0",
   "scripts": {
-    "build": "npm run clean && ngc -p tsconfig-prod.json",
-    "build:demo": "rimraf demo-dist && cross-env NODE_ENV=production webpack && cp index.html favicon.ico demo-dist",
-    "clean": "rimraf lib",
-    "deploy": "gh-pages -d demo-dist",
-    "start": "webpack-dev-server --inline",
-    "lint": "tslint \"./src/**/*.ts\"",
-    "prepush": "npm run lint"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jiayihu/ng-animate.git"
-  },
-  "keywords": [
-    "angular",
-    "animations"
-  ],
-  "author": "Jiayi Hu <jiayi.ghu@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jiayihu/ng-animate/issues"
-  },
-  "homepage": "https://github.com/jiayihu/ng-animate#readme",
-  "devDependencies": {
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^6.0.3",
+    "@angular/core": "^6.0.3",
+    "@angular/compiler": "^6.0.3",
     "@angular/animations": "^6.0.3",
-    "@angular/core": "^6.0.4",
-    "@types/node": "^8.0.17",
-    "cross-env": "^5.0.1",
-    "gh-pages": "^1.0.0",
-    "husky": "^0.14.3",
-    "rimraf": "^2.6.1",
-    "tslint": "^5.5.0",
-    "typescript": "2.4.2",
-    "web-animations-js": "^2.3.1"
+    "@angular/forms": "^6.0.3",
+    "@angular/http": "^6.0.3",
+    "@angular/platform-browser": "^6.0.3",
+    "@angular/platform-browser-dynamic": "^6.0.3",
+    "@angular/router": "^6.0.3",
+    "core-js": "^2.5.4",
+    "rxjs": "^6.0.0",
+    "zone.js": "^0.8.26"
   },
-  "peerDependencies": {
-    "@angular/animations": ">=4.2.0",
-    "@angular/core": ">=4.2.0",
-    "web-animations-js": ">=2.0.0"
-  },
-  "directories": {
-    "lib": "lib"
-  },
-  "dependencies": {}
+  "devDependencies": {
+    "@angular/compiler-cli": "^6.0.3",
+    "@angular-devkit/build-ng-packagr": "~0.6.8",
+    "@angular-devkit/build-angular": "~0.6.8",
+    "ng-packagr": "^3.0.0-rc.2",
+    "tsickle": ">=0.25.5",
+    "tslib": "^1.7.1",
+    "typescript": "~2.7.2",
+    "@angular/cli": "~6.0.8",
+    "@angular/language-service": "^6.0.3",
+    "@types/jasmine": "~2.8.6",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~4.2.1",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~1.7.1",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.0",
+    "karma-jasmine": "~1.1.1",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.3.0",
+    "ts-node": "~5.0.1",
+    "tslint": "~5.9.1"
+  }
 }

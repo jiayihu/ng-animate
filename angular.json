@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "ng-animate": {
+      "root": "projects/ng-animate",
+      "sourceRoot": "projects/ng-animate/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-animate/tsconfig.lib.json",
+            "project": "projects/ng-animate/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ng-animate/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-animate/src/test.ts",
+            "tsConfig": "projects/ng-animate/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-animate/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-animate/tsconfig.lib.json",
+              "projects/ng-animate/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "demo"

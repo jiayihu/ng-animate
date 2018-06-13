@@ -69,10 +69,10 @@ import {
   zoomOutUp,
   zoomOutLeft,
   zoomOutRight
-} from '../../../lib/index';
+} from 'ng-animate';
 
 @Component({
-  selector: 'demo-app',
+  selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None,
