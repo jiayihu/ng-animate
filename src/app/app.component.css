@@ -10,12 +10,12 @@ small {
   color: #666;
   cursor: pointer;
   font-size: inherit;
-  margin-top: .5rem;
-  padding: .5rem 1rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .btn:not(:last-child) {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .container {

@@ -68,11 +68,11 @@ import {
   zoomOutDown,
   zoomOutUp,
   zoomOutLeft,
-  zoomOutRight,
-} from '../../lib/index';
+  zoomOutRight
+} from 'ng-animate';
 
 @Component({
-  selector: 'demo-app',
+  selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None,
@@ -92,7 +92,7 @@ import {
     trigger('bounceInLeft', [transition('* => *', useAnimation(bounceInLeft))]),
     trigger('bounceOut', [transition('* => *', useAnimation(bounceOut))]),
     trigger('bounceOutRight', [
-      transition('* => *', useAnimation(bounceOutRight)),
+      transition('* => *', useAnimation(bounceOutRight))
     ]),
     trigger('bounceOutUp', [transition('* => *', useAnimation(bounceOutUp))]),
 
@@ -107,7 +107,7 @@ import {
     trigger('slideInLeft', [transition('* => *', useAnimation(slideInLeft))]),
     trigger('slideOutUp', [transition('* => *', useAnimation(slideOutUp))]),
     trigger('slideOutRight', [
-      transition('* => *', useAnimation(slideOutRight)),
+      transition('* => *', useAnimation(slideOutRight))
     ]),
 
     trigger('flip', [transition('* => *', useAnimation(flip))]),
@@ -118,22 +118,22 @@ import {
 
     trigger('lightSpeedIn', [transition('* => *', useAnimation(lightSpeedIn))]),
     trigger('lightSpeedOut', [
-      transition('* => *', useAnimation(lightSpeedOut)),
+      transition('* => *', useAnimation(lightSpeedOut))
     ]),
 
     trigger('rotateIn', [transition('* => *', useAnimation(rotateIn))]),
     trigger('rotateInDownLeft', [
-      transition('* => *', useAnimation(rotateInDownLeft)),
+      transition('* => *', useAnimation(rotateInDownLeft))
     ]),
     trigger('rotateInUpRight', [
-      transition('* => *', useAnimation(rotateInUpRight)),
+      transition('* => *', useAnimation(rotateInUpRight))
     ]),
     trigger('rotateOut', [transition('* => *', useAnimation(rotateOut))]),
     trigger('rotateOutUpLeft', [
-      transition('* => *', useAnimation(rotateOutUpLeft)),
+      transition('* => *', useAnimation(rotateOutUpLeft))
     ]),
     trigger('rotateOutDownRight', [
-      transition('* => *', useAnimation(rotateOutDownRight)),
+      transition('* => *', useAnimation(rotateOutDownRight))
     ]),
 
     trigger('hinge', [transition('* => *', useAnimation(hinge))]),
@@ -146,10 +146,20 @@ import {
     trigger('zoomInDown', [transition('* => *', useAnimation(zoomInDown))]),
     trigger('zoomOut', [transition('* => *', useAnimation(zoomOut))]),
     trigger('zoomOutUp', [transition('* => *', useAnimation(zoomOutUp))]),
-    trigger('zoomOutRight', [transition('* => *', useAnimation(zoomOutRight))]),
-  ],
+    trigger('zoomOutRight', [transition('* => *', useAnimation(zoomOutRight))])
+  ]
 })
 export class AppComponent {
+  bounce = false;
+  flash = false;
+  pulse = false;
+  rubberBand = false;
+  shake = false;
+  swing = false;
+  tada = false;
+  wobble = false;
+  jello = false;
+
   attentionSeekers = [
     'bounce',
     'flash',
@@ -159,8 +169,17 @@ export class AppComponent {
     'swing',
     'tada',
     'wobble',
-    'jello',
+    'jello'
   ];
+
+  // ==================
+
+  bounceIn = false;
+  bounceInDown = false;
+  bounceInLeft = false;
+  bounceOut = false;
+  bounceOutUp = false;
+  bounceOutRight = false;
 
   bouncing = [
     'bounceIn',
@@ -168,8 +187,19 @@ export class AppComponent {
     'bounceInLeft',
     'bounceOut',
     'bounceOutUp',
-    'bounceOutRight',
+    'bounceOutRight'
   ];
+
+  // ==================
+
+  fadeIn = false;
+  fadeInDown = false;
+  fadeInLeft = false;
+  fadeOut = false;
+  fadeOutUp = false;
+  fadeOutRight = false;
+
+  // ==================
 
   fading = [
     'fadeIn',
@@ -177,14 +207,43 @@ export class AppComponent {
     'fadeInLeft',
     'fadeOut',
     'fadeOutUp',
-    'fadeOutRight',
+    'fadeOutRight'
   ];
+
+  // ==================
+
+  slideInDown = false;
+  slideInLeft = false;
+  slideOutUp = false;
+  slideOutRight = false;
 
   sliding = ['slideInDown', 'slideInLeft', 'slideOutUp', 'slideOutRight'];
 
+  // ==================
+
+  flip = false;
+  flipInX = false;
+  flipInY = false;
+  flipOutX = false;
+  flipOutY = false;
+
   flippers = ['flip', 'flipInX', 'flipInY', 'flipOutX', 'flipOutY'];
 
+  // ==================
+
+  lightSpeedIn = false;
+  lightSpeedOut = false;
+
   lightSpeed = ['lightSpeedIn', 'lightSpeedOut'];
+
+  // ==================
+
+  rotateIn = false;
+  rotateInDownLeft = false;
+  rotateInUpRight = false;
+  rotateOut = false;
+  rotateOutUpLeft = false;
+  rotateOutDownRight = false;
 
   rotate = [
     'rotateIn',
@@ -192,10 +251,26 @@ export class AppComponent {
     'rotateInUpRight',
     'rotateOut',
     'rotateOutUpLeft',
-    'rotateOutDownRight',
+    'rotateOutDownRight'
   ];
 
+  // ==================
+
+  hinge = false;
+  jackInTheBox = false;
+  rollIn = false;
+  rollOut = false;
+
   specials = ['hinge', 'jackInTheBox', 'rollIn', 'rollOut'];
+
+  // ==================
+
+  zoomIn = false;
+  zoomInDown = false;
+  zoomInLeft = false;
+  zoomOut = false;
+  zoomOutUp = false;
+  zoomOutRight = false;
 
   zooming = [
     'zoomIn',
@@ -203,7 +278,7 @@ export class AppComponent {
     'zoomInLeft',
     'zoomOut',
     'zoomOutUp',
-    'zoomOutRight',
+    'zoomOutRight'
   ];
 
   animate(name: 'string') {
