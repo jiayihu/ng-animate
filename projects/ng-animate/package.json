@@ -18,7 +18,6 @@
   "homepage": "https://github.com/jiayihu/ng-animate#readme",
   "peerDependencies": {
     "@angular/animations": ">=4.2.0",
-    "@angular/core": ">=4.2.0",
-    "web-animations-js": ">=2.0.0"
+    "@angular/core": ">=4.2.0"
   }
 }
