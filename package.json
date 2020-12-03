@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "packagr": "ng-packagr -p projects/ng-animate/ng-package.json",
     "deploy": "gh-pages -d dist/demo",
     "test": "ng test",
     "lint": "ng lint",
