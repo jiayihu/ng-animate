@@ -4,8 +4,6 @@
 
 `ng-animate` is a collection of cool, reusable and flexible animations for Angular. It implements all the animations in [animate.css](https://daneden.github.io/animate.css/), but with the power and flexibility of [Angular animations](https://angular.io/guide/animations) instead of CSS.
 
-> **Note**: the library requires Angular 4.2+, which introduced [different new animation APIs](http://angularjs.blogspot.it/2017/06/angular-42-now-available.html) needed by `ng-animate`.
-
 ## Demo
 
 The demo of the animations is available at [https://jiayihu.github.io/ng-animate/](https://jiayihu.github.io/ng-animate/).

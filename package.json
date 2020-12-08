@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href /ng-animate/",
+    "build-lib": "ng build ng-animate --prod",
     "packagr": "ng-packagr -p projects/ng-animate/ng-package.json",
     "deploy": "gh-pages -d dist/demo",
     "test": "ng test",
