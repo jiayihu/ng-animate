@@ -71,6 +71,7 @@ import {
   zoomOutRight
 } from 'ng-animate';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
