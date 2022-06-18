@@ -27,7 +27,7 @@ export class ExampleBoxComponent {
 
     const animPlayer = this.animationBuilder
       .build(anim)
-      .create(element, { params: this.params });
+      .create(element, { params: { ...this.params } });
 
     animPlayer.init();
     animPlayer.onDone(() => {

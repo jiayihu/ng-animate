@@ -141,19 +141,19 @@ export function fadeOutY(
 }
 
 export const fadeOut = fadeOutX(0, 0);
-export const fadeOutDown = fadeOutY('-100%', 0);
-export const fadeOutDownBig = fadeOutY('-2000px', 0);
-export const fadeOutUp = fadeOutY('100%', 0);
-export const fadeOutUpBig = fadeOutY('2000px', 0);
-export const fadeOutLeft = fadeOutX('-100%', 0);
-export const fadeOutLeftBig = fadeOutX('-2000px', 0);
-export const fadeOutRight = fadeOutX('100%', 0);
-export const fadeOutRightBig = fadeOutX('2000px', 0);
+export const fadeOutDown = fadeOutY(0, '100%');
+export const fadeOutDownBig = fadeOutY(0, '2000px');
+export const fadeOutUp = fadeOutY(0, '-100%');
+export const fadeOutUpBig = fadeOutY(0, '-2000px');
+export const fadeOutLeft = fadeOutX(0, '-100%');
+export const fadeOutLeftBig = fadeOutX(0, '-2000px');
+export const fadeOutRight = fadeOutX(0, '100%');
+export const fadeOutRightBig = fadeOutX(0, '2000px');
 
-export const fadeOutTopLeft = fadeXY('-100%', '-100%', 0, 0, 1, 0);
-export const fadeOutTopRight = fadeXY('100%', '-100%', 0, 0, 1, 0);
-export const fadeOutBottomLeft = fadeXY('-100%', '100%', 0, 0, 1, 0);
-export const fadeOutBottomRight = fadeXY('100%', '100%', 0, 0, 1, 0);
+export const fadeOutTopLeft = fadeXY(0, 0, '-100%', '-100%', 1, 0);
+export const fadeOutTopRight = fadeXY(0, 0, '100%', '-100%', 1, 0);
+export const fadeOutBottomLeft = fadeXY(0, 0, '-100%', '100%', 1, 0);
+export const fadeOutBottomRight = fadeXY(0, 0, '100%', '100%', 1, 0);
 
 export function slideX(
   a: string | 0,
