@@ -83,16 +83,31 @@ All the animations are organized by their group. Many of them have additional pa
 - `flash`
 - `pulse`
 - `rubberBand`
-- `shake`
+- `shakeX`
+- `shakeY`
+- `headShake`
 - `swing`
 - `tada`
 - `wobble`
 - `jello`
+- `heartBeat`
+
+### Back
+
+- `backInDown`
+- `backInLeft`
+- `backInRight`
+- `backInUp`
+
+- `backOutDown`
+- `backOutLeft`
+- `backOutRight`
+- `backOutUp`
 
 ### Bouncing
 
 - `bounceIn`
-- `bouceOut`. Additional param: `scale`
+- `bounceOut`. Additional param: `scale`
 
 The following bouncing animations have additional params `a, b, c, d` for `translate`
 
@@ -100,6 +115,7 @@ The following bouncing animations have additional params `a, b, c, d` for `trans
 - `bounceInLeft`
 - `bounceInRight`
 - `bounceInUp`
+
 - `bounceOutDown`
 - `bounceOutLeft`
 - `bounceOutRight`
@@ -107,18 +123,42 @@ The following bouncing animations have additional params `a, b, c, d` for `trans
 
 ### Fading
 
-All fading animations have additional params `fromOpacity, toOpacity` for `opacity` transition and `a, b` for `translate`.
+All fading animations have additional params `fromOpacity`, `toOpacity` for `opacity` transition and `a, b` for `translate`.
 
 - `fadeIn`
 - `fadeInDown`
 - `fadeInLeft`
 - `fadeInRight`
 - `fadeInUp`
+
+- `fadeInDownBig`
+- `fadeInLeftBig`
+- `fadeInRightBig`
+- `fadeInUpBig`
+
 - `fadeOut`
 - `fadeOutDown`
 - `fadeOutLeft`
 - `fadeOutRight`
 - `fadeOutUp`
+
+- `fadeOutDownBig`
+- `fadeOutLeftBig`
+- `fadeOutRightBig`
+- `fadeOutUpBig`
+
+The following fading animations do not have `a, b` for `translate` but `fromX`,`fromY`,`toX`,`toY` instead.
+
+- `fadeInTopLeft`
+- `fadeInTopRight`
+- `fadeInBottomLeft`
+- `fadeInBottomRight`
+
+- `fadeOutTopLeft`
+- `fadeOutTopRight`
+- `fadeOutBottomLeft`
+- `fadeOutBottomRight`
+
 
 ### Sliding
 
@@ -144,11 +184,15 @@ Sliding animations are basically fading animations without a change of `opacity`
 ### LightSpeed
 
 - `lightSpeedIn`
+- `lightSpeedLeft`
+- `lightSpeedIn`
 - `lightSpeedOut`
+- `lightSpeedOutRight` (same as `lightSpeedOut`)
+- `lightSpeedOutLeft`
 
 ### Rotating
 
-All rotating animations have additional params `fromOpacity, toOpacity` for `opacity` transition, `origin` for `transform-origin` and `degrees` for `rotate3d`.
+All rotating animations have additional params `fromOpacity`, `toOpacity` for `opacity` transition, `origin` for `transform-origin` and `degrees` for `rotate3d`.
 
 - `rotateIn`
 - `rotateInDownLeft`
@@ -179,6 +223,7 @@ The following zooming animations have additional params `a, b` for `translate`
 - `zoomInLeft`
 - `zoomInRight`
 - `zoomInUp`
+
 - `zoomOutDown`
 - `zoomOutLeft`
 - `zoomOutRight`
@@ -186,7 +231,7 @@ The following zooming animations have additional params `a, b` for `translate`
 
 ## Advanced params
 
-Many of the animations support also other params like `scale`, `fromOpacity`, `toOpacity` and much more, allowing extremely flexible usage and customisation if you're not happy with default values. 
+Many of the animations support also other params like `scale`, `fromOpacity`, `toOpacity` and much more, allowing extremely flexible usage and customization if you're not happy with default values. 
 
 Single letters like `a, b, c, d` are used for the steps of some animations: `a` is the starting value, `d` is the ending.  
 The animated property they refer to depends on the animation and the direction: usually `translate` on axis Y from `-Down/-Up`, axis X for `-Left/-Right`.

@@ -1,182 +1,70 @@
 <div class="container">
   <div class="content">
-    <h1>ng-animate</h1>
+    <h1 [@tada]="true">ng-animate</h1>
 
     <div class="animations">
-      <div
-        [@bounce]="bounce"
-        [@flash]="flash"
-        [@pulse]="pulse"
-        [@rubberBand]="rubberBand"
-        [@shake]="shake"
-        [@swing]="swing"
-        [@tada]="tada"
-        [@wobble]="wobble"
-        [@jello]="jello"
+      <h2>Available Animations</h2>
+      <app-example-box label="Attention Seekers" [animations]="attentionSeekersAnimations"></app-example-box>
+      <app-example-box label="Back entrances" [animations]="backEntrances"></app-example-box>
+      <app-example-box label="Back exits" [animations]="backExits"></app-example-box>
+      <app-example-box label="Bouncing entrances" [animations]="bouncingEntrances"></app-example-box>
+      <app-example-box label="Bouncing exits" [animations]="bouncingExits"></app-example-box>
+      <app-example-box label="Fading entrances" [animations]="fadingEntrances"></app-example-box>
+      <app-example-box label="Fading exits" [animations]="fadingExits"></app-example-box>
+      <app-example-box label="Flippers" [animations]="flippers"></app-example-box>
+      <app-example-box label="Lightspeed" [animations]="lightspeed"></app-example-box>
+      <app-example-box label="Rotating entrances" [animations]="rotatingEntrances"></app-example-box>
+      <app-example-box label="Rotating exits" [animations]="rotatingExits"></app-example-box>
 
-        class="box"
-      ></div>
-      <h2>Attention Seekers</h2>
-      <p>
-        <button
-          *ngFor="let animation of attentionSeekers"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
+      <app-example-box label="Specials" [animations]="specials"></app-example-box>
+      <app-example-box label="Zooming entrances" [animations]="zoomingEntrances"></app-example-box>
+      <app-example-box label="Zooming exits" [animations]="zoomingExits"></app-example-box>
 
-      <div
-        [@bounceIn]="bounceIn"
-        [@bounceInDown]="bounceInDown"
-        [@bounceInLeft]="bounceInLeft"
+      <app-example-box label="Sliding entrances" [animations]="slidingEntrances"></app-example-box>
+      <app-example-box label="Sliding exits" [animations]="slidingExits"></app-example-box>
+    </div>
+    <div class="animations">
+      <h2>Advanced Usage</h2>
+      <p>You can use parameters to modify the animations:</p>
 
-        [@bounceOut]="{ value: bounceOut, params: { scale: 1.25 } }"
-        [@bounceOutUp]="bounceOutUp"
-        [@bounceOutRight]="bounceOutRight"
+      <app-example-box label="Timing" [animations]="slidingExits" [params]="{ timing: animationTiming }">
+      </app-example-box>
+      <label>
+        Timing (in seconds): <input min="0" max="100" type="number" [(ngModel)]="animationTiming">
+      </label>
 
-        class="box"
-      ></div>
-      <h2>Bouncing <small>(not all directions are shown in the demo)</small></h2>
-      <p>
-        <button
-          *ngFor="let animation of bouncing"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
-
-      <div
-        [@fadeIn]="{ value: fadeIn, params: { timing: 2 } }"
-        [@fadeInDown]="fadeInDown"
-        [@fadeInLeft]="fadeInLeft"
-        [@fadeOut]="fadeOut"
-        [@fadeOutUp]="fadeOutUp"
-        [@fadeOutRight]="fadeOutRight"
-
-        class="box"
-      ></div>
-      <h2>Fading <small>(not all directions are shown in the demo)</small></h2>
-      <p>
-        <button
-          *ngFor="let animation of fading"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
-
-      <div
-        [@slideInDown]="slideInDown"
-        [@slideInLeft]="slideInLeft"
-        [@slideOutUp]="slideOutUp"
-        [@slideOutRight]="slideOutRight"
-
-        class="box"
-      ></div>
-      <h2>Sliding <small>(not all directions are shown in the demo)</small></h2>
-      <p>
-        <button
-          *ngFor="let animation of sliding"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
-
-      <div
-        [@flip]="flip"
-        [@flipInX]="flipInX"
-        [@flipInY]="flipInY"
-        [@flipOutX]="flipOutX"
-        [@flipOutY]="flipOutY"
-
-        class="box"
-      ></div>
-      <h2>Flippers</h2>
-      <p>
-        <button
-          *ngFor="let animation of flippers"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
-
-      <div
-        [@lightSpeedIn]="{ value: lightSpeedIn, params: { timing: 0.4 } }"
-        [@lightSpeedOut]="lightSpeedOut"
-
-        class="box"
-      ></div>
-      <h2>LightSpeed</h2>
-      <p>
-        <button
-          *ngFor="let animation of lightSpeed"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
-
-      <div
-        [@rotateIn]="rotateIn"
-        [@rotateInDownLeft]="rotateInDownLeft"
-        [@rotateInUpRight]="rotateInUpRight"
-        [@rotateOut]="rotateOut"
-        [@rotateOutUpLeft]="rotateOutUpLeft"
-        [@rotateOutDownRight]="rotateOutDownRight"
-
-        class="box"
-      ></div>
-      <h2>Rotate <small>(not all directions are shown in the demo)</small></h2>
-      <p>
-        <button
-          *ngFor="let animation of rotate"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
-
-      <div
-        [@hinge]="hinge"
-        [@jackInTheBox]="jackInTheBox"
-        [@rollIn]="rollIn"
-        [@rollOut]="rollOut"
-
-        class="box"
-      ></div>
-      <h2>Specials</h2>
-      <p>
-        <button
-          *ngFor="let animation of specials"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
-
-      <div
-        [@zoomIn]="zoomIn"
-        [@zoomInLeft]="zoomInLeft"
-        [@zoomInDown]="zoomInDown"
-        [@zoomOut]="zoomOut"
-        [@zoomOutUp]="zoomOutUp"
-        [@zoomOutRight]="zoomOutRight"
-
-        class="box"
-      ></div>
-      <h2>Zooming <small>(not all directions are shown in the demo)</small></h2>
-      <p>
-        <button
-          *ngFor="let animation of zooming"
-          (click)="animate(animation)"
-          class="btn"
-          type="button"
-        >{{ animation }}</button>
-      </p>
+      <app-example-box label="Multiple Params" [animations]="rotatingEntrances"
+        [params]="{
+        timing: animationTiming, fromOpacity: fromOpacity, toOpacity: toOpacity, degrees: degrees + 'deg', origin: originX + ' ' + originY }">
+      </app-example-box>
+      <label>
+        Timing: <input min="0" max="100" type="number" [(ngModel)]="animationTiming">
+      </label>
+      <br>
+      <label>
+        Degrees: <input min="-360" max="360" type="number" [(ngModel)]="degrees">
+      </label>
+      <br>
+      <label>
+        Origin:
+        <select [(ngModel)]="originX">
+          <option>top</option>
+          <option>center</option>
+          <option>bottom</option>
+        </select>
+        <select [(ngModel)]="originY">
+          <option>left</option>
+          <option>center</option>
+          <option>right</option>
+        </select>
+      </label>
+      <br>
+      <label>
+        Opacity from:
+        <input min="0" max="1" step="0.1" type="number" [(ngModel)]="fromOpacity">
+        to:
+        <input min="0" max="1" step="0.1" type="number" [(ngModel)]="toOpacity">
+      </label>
     </div>
   </div>
 </div>

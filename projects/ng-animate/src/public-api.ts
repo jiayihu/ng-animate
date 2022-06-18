@@ -10,3 +10,4 @@ export * from './lib/lightspeed';
 export * from './lib/rotate';
 export * from './lib/specials';
 export * from './lib/zooming';
+export * from './lib/back';
