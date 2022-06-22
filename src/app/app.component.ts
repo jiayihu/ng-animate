@@ -248,6 +248,8 @@ export class AppComponent {
     slideOutUp,
   };
 
+  rotateInParams = { rotateIn };
+
   // params
 
   animationTiming = 2;

@@ -33,7 +33,7 @@
         Timing (in seconds): <input min="0" max="100" type="number" [(ngModel)]="animationTiming">
       </label>
 
-      <app-example-box label="Multiple Params" [animations]="rotatingEntrances"
+      <app-example-box label="Multiple Params" [animations]="rotateInParams"
         [params]="{
         timing: animationTiming, fromOpacity: fromOpacity, toOpacity: toOpacity, degrees: degrees + 'deg', origin: originX + ' ' + originY }">
       </app-example-box>
