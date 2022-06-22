@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./example-box.component.css'],
 })
 export class ExampleBoxComponent {
-  @Input() label: string;
+  @Input() label?: string;
 
   @Input() animations: { [name: string]: AnimationMetadata } = {};
 
