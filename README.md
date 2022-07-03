@@ -98,7 +98,7 @@ All the animations are organized by their group. Many of them have additional pa
 - `backInLeft`
 - `backInRight`
 - `backInUp`
-
+<!-- -->
 - `backOutDown`
 - `backOutLeft`
 - `backOutRight`
@@ -115,7 +115,7 @@ The following bouncing animations have additional params `a, b, c, d` for `trans
 - `bounceInLeft`
 - `bounceInRight`
 - `bounceInUp`
-
+<!-- -->
 - `bounceOutDown`
 - `bounceOutLeft`
 - `bounceOutRight`
@@ -130,18 +130,18 @@ All fading animations have additional params `fromOpacity`, `toOpacity` for `opa
 - `fadeInLeft`
 - `fadeInRight`
 - `fadeInUp`
-
+<!-- -->
 - `fadeInDownBig`
 - `fadeInLeftBig`
 - `fadeInRightBig`
 - `fadeInUpBig`
-
+<!-- -->
 - `fadeOut`
 - `fadeOutDown`
 - `fadeOutLeft`
 - `fadeOutRight`
 - `fadeOutUp`
-
+<!-- -->
 - `fadeOutDownBig`
 - `fadeOutLeftBig`
 - `fadeOutRightBig`
@@ -153,7 +153,7 @@ The following fading animations do not have `a, b` for `translate` but `fromX`,`
 - `fadeInTopRight`
 - `fadeInBottomLeft`
 - `fadeInBottomRight`
-
+<!-- -->
 - `fadeOutTopLeft`
 - `fadeOutTopRight`
 - `fadeOutBottomLeft`
@@ -223,7 +223,7 @@ The following zooming animations have additional params `a, b` for `translate`
 - `zoomInLeft`
 - `zoomInRight`
 - `zoomInUp`
-
+<!-- -->
 - `zoomOutDown`
 - `zoomOutLeft`
 - `zoomOutRight`
