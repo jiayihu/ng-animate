@@ -1,6 +1,6 @@
 {
   "name": "ng-animate",
-  "version": "14.0.0",
+  "version": "2.0.1",
   "description": "A library of cool, reusable and flexible animations for Angular",
   "repository": {
     "type": "git",
@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/jiayihu/ng-animate#readme",
   "peerDependencies": {
-    "@angular/common": ">=14.0.0",
-    "@angular/core": ">=14.0.0",
-    "@angular/animations": ">=14.0.0"
+    "@angular/common": ">=12.0.0",
+    "@angular/core": ">=12.0.0",
+    "@angular/animations": ">=12.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
