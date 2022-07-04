@@ -1,9 +1,9 @@
 import {
-  AnimationReferenceMetadata,
   animation,
   style,
   animate,
   keyframes,
+  useAnimation,
 } from '@angular/animations';
 import { DEFAULT_TIMING } from './utils';
 
@@ -72,20 +72,32 @@ export const shake = animation(
     '{{ timing }}s {{ delay }}s',
     keyframes([
       style({ transform: 'translate3d(0, 0, 0)', offset: 0 }),
-      style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.1 }),
-      style({ transform: 'translate3d(10px, 0, 0)', offset: 0.2 }),
-      style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.3 }),
-      style({ transform: 'translate3d(10px, 0, 0)', offset: 0.4 }),
-      style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.5 }),
-      style({ transform: 'translate3d(10px, 0, 0)', offset: 0.6 }),
-      style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.7 }),
-      style({ transform: 'translate3d(10px, 0, 0)', offset: 0.8 }),
-      style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.9 }),
+      style({ transform: 'translate3d({{ translateB }})', offset: 0.1 }),
+      style({ transform: 'translate3d({{ translateA }})', offset: 0.2 }),
+      style({ transform: 'translate3d({{ translateB }})', offset: 0.3 }),
+      style({ transform: 'translate3d({{ translateA }})', offset: 0.4 }),
+      style({ transform: 'translate3d({{ translateB }})', offset: 0.5 }),
+      style({ transform: 'translate3d({{ translateA }})', offset: 0.6 }),
+      style({ transform: 'translate3d({{ translateB }})', offset: 0.7 }),
+      style({ transform: 'translate3d({{ translateA }})', offset: 0.8 }),
+      style({ transform: 'translate3d({{ translateB }})', offset: 0.9 }),
       style({ transform: 'translate3d(0, 0, 0)', offset: 1 }),
     ])
   ),
-  { params: { timing: DEFAULT_TIMING, delay: 0 } }
+  {
+    params: {
+      timing: DEFAULT_TIMING,
+      delay: 0,
+      translateA: '-10px, 0, 0',
+      translateB: '10px, 0, 0',
+    },
+  }
 );
+
+export const shakeX = shake;
+export const shakeY = useAnimation(shake, {
+  params: { translateA: '0, -10px, 0', translateB: '0, 10px, 0' },
+});
 
 export const swing = animation(
   animate(
@@ -202,6 +214,41 @@ export const jello = animation(
         offset: 0.88,
       }),
       style({ transform: 'none', offset: 1 }),
+    ])
+  ),
+  { params: { timing: DEFAULT_TIMING, delay: 0 } }
+);
+
+export const heartBeat = animation(
+  animate(
+    '{{ timing }}s {{ delay }}s ease-in-out',
+    keyframes([
+      style({ transform: 'scale(1)', offset: 0 }),
+      style({ transform: 'scale({{ scale }})', offset: 0.14 }),
+      style({ transform: 'scale(1)', offset: 0.28 }),
+      style({
+        transform: 'scale({{ scale }})',
+        offset: 0.42,
+      }),
+      style({
+        transform: 'scale(1)',
+        offset: 0.7,
+      }),
+    ])
+  ),
+  { params: { timing: DEFAULT_TIMING * 1.3, scale: 1.3, delay: 0 } }
+);
+
+export const headShake = animation(
+  animate(
+    '{{ timing }}s {{ delay }}s ease-in-out',
+    keyframes([
+      style({ transform: 'translateX(0)', offset: 0 }),
+      style({ transform: 'translateX(-6px) rotateY(-9deg)', offset: 0.065 }),
+      style({ transform: 'translateX(5px) rotateY(7deg)', offset: 0.185 }),
+      style({ transform: 'translateX(-3px) rotateY(-5deg)', offset: 0.315 }),
+      style({ transform: 'translateX(2px) rotateY(3deg)', offset: 0.435 }),
+      style({ transform: 'translateX(0)', offset: 0.5 }),
     ])
   ),
   { params: { timing: DEFAULT_TIMING, delay: 0 } }

@@ -8,7 +8,7 @@ small {
   border: none;
   border-radius: 2px;
   color: #666;
-   cursor: pointer;
+  cursor: pointer;
   font-size: inherit;
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
@@ -23,7 +23,7 @@ small {
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .content {
@@ -31,15 +31,22 @@ small {
   text-align: center;
 }
 
-.box {
-  background-color: #fff;
-  border-radius: 3px;
-  height: 48px;
-  width: 48px;
-  margin: 0 auto;
-  margin-top: 5rem;
-}
-
 .animations {
   margin-top: 3rem;
+}
+
+input[type="number"] {
+  background-color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 2px;
+  margin: 0.5rem 0.1rem;
+}
+
+select {
+  background-color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 2px;
+  margin: 0.5rem 0.1rem;
 }

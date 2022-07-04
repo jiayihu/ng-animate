@@ -1,10 +1,5 @@
-import {
-  AnimationReferenceMetadata,
-  animation,
-  style,
-  animate,
-  keyframes
-} from '@angular/animations';
+import { animate, animation, AnimationReferenceMetadata, keyframes, style } from '@angular/animations';
+
 import { DEFAULT_TIMING } from './utils';
 
 export const zoomIn = animation(
@@ -15,22 +10,22 @@ export const zoomIn = animation(
         style({
           opacity: 0,
           transform: 'scale3d(.3, .3, .3)',
-          offset: 0
+          offset: 0,
         }),
         style({
           opacity: 1,
           transform: 'scale3d(1, 1, 1)',
-          offset: 0.5
-        })
+          offset: 0.5,
+        }),
       ])
-    )
+    ),
   ],
   {
-    params: { timing: DEFAULT_TIMING, delay: 0 }
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
-export function zoomInY(a, b) {
+export function zoomInY(a: string, b: string): AnimationReferenceMetadata {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
@@ -38,20 +33,20 @@ export function zoomInY(a, b) {
         style({
           opacity: 0,
           transform: `scale3d(.1, .1, .1) translate3d(0, {{ a }}, 0)`,
-          offset: 0
+          offset: 0,
         }),
         style({
           opacity: 1,
           transform: `scale3d(.475, .475, .475) translate3d(0, {{ b }}, 0)`,
-          offset: 0.6
-        })
+          offset: 0.6,
+        }),
       ])
     ),
     { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export function zoomInX(a, b) {
+export function zoomInX(a: string, b: string): AnimationReferenceMetadata {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
@@ -59,13 +54,13 @@ export function zoomInX(a, b) {
         style({
           opacity: 0,
           transform: `scale3d(.1, .1, .1) translate3d({{ a }}, 0, 0)`,
-          offset: 0
+          offset: 0,
         }),
         style({
           opacity: 1,
           transform: `scale3d(.475, .475, .475) translate3d({{ b }}, 0, 0)`,
-          offset: 0.6
-        })
+          offset: 0.6,
+        }),
       ])
     ),
     { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
@@ -84,26 +79,26 @@ export const zoomOut = animation(
       keyframes([
         style({
           opacity: 1,
-          offset: 0
+          offset: 0,
         }),
         style({
           opacity: 0,
           transform: 'scale3d(.3, .3, .3)',
-          offset: 0.5
+          offset: 0.5,
         }),
         style({
           opacity: 0,
-          offset: 1
-        })
+          offset: 1,
+        }),
       ])
-    )
+    ),
   ],
   {
-    params: { timing: DEFAULT_TIMING, delay: 0 }
+    params: { timing: DEFAULT_TIMING, delay: 0 },
   }
 );
 
-export function zoomOutY(a, b) {
+export function zoomOutY(a: string, b: string): AnimationReferenceMetadata {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
@@ -111,20 +106,20 @@ export function zoomOutY(a, b) {
         style({
           opacity: 1,
           transform: `scale3d(.475, .475, .475) translate3d(0, {{ a }}, 0)`,
-          offset: 0.4
+          offset: 0.4,
         }),
         style({
           opacity: 0,
           transform: `scale3d(.1, .1, .1) translate3d(0, {{ b }}, 0)`,
-          offset: 1
-        })
+          offset: 1,
+        }),
       ])
     ),
     { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }
   );
 }
 
-export function zoomOutX(a, b) {
+export function zoomOutX(a: string, b: string): AnimationReferenceMetadata {
   return animation(
     animate(
       '{{ timing }}s {{ delay }}s cubic-bezier(0.550, 0.055, 0.675, 0.190)',
@@ -132,13 +127,13 @@ export function zoomOutX(a, b) {
         style({
           opacity: 1,
           transform: `scale3d(.475, .475, .475) translate3d({{ a }}, 0, 0)`,
-          offset: 0.4
+          offset: 0.4,
         }),
         style({
           opacity: 0,
           transform: `scale3d(.1, .1, .1) translate3d({{ b }}, 0, 0)`,
-          offset: 1
-        })
+          offset: 1,
+        }),
       ])
     ),
     { params: { timing: DEFAULT_TIMING, delay: 0, a, b } }

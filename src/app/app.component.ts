@@ -1,288 +1,261 @@
+import { transition, trigger, useAnimation } from '@angular/animations';
 import { Component, ViewEncapsulation } from '@angular/core';
-import { trigger, transition, useAnimation } from '@angular/animations';
-import {
-  bounce,
-  flash,
-  pulse,
-  rubberBand,
-  shake,
-  swing,
-  tada,
-  wobble,
-  jello,
-  bounceIn,
-  bounceInDown,
-  bounceInLeft,
-  bounceInRight,
-  bounceInUp,
-  bounceOut,
-  bounceOutDown,
-  bounceOutLeft,
-  bounceOutRight,
-  bounceOutUp,
-  fadeIn,
-  fadeInDown,
-  fadeInUp,
-  fadeInLeft,
-  fadeInRight,
-  fadeOut,
-  fadeOutDown,
-  fadeOutUp,
-  fadeOutLeft,
-  fadeOutRight,
-  slideInDown,
-  slideInUp,
-  slideInLeft,
-  slideInRight,
-  slideOutDown,
-  slideOutUp,
-  slideOutLeft,
-  slideOutRight,
-  flip,
-  flipInX,
-  flipInY,
-  flipOutX,
-  flipOutY,
-  lightSpeedIn,
-  lightSpeedOut,
-  rotateIn,
-  rotateInDownLeft,
-  rotateInDownRight,
-  rotateInUpLeft,
-  rotateInUpRight,
-  rotateOut,
-  rotateOutDownLeft,
-  rotateOutDownRight,
-  rotateOutUpLeft,
-  rotateOutUpRight,
-  hinge,
-  jackInTheBox,
-  rollIn,
-  rollOut,
-  zoomIn,
-  zoomInDown,
-  zoomInUp,
-  zoomInLeft,
-  zoomInRight,
-  zoomOut,
-  zoomOutDown,
-  zoomOutUp,
-  zoomOutLeft,
-  zoomOutRight
-} from 'ng-animate';
 
+import {
+    backInDown,
+    backInLeft,
+    backInRight,
+    backInUp,
+    backOutDown,
+    backOutLeft,
+    backOutRight,
+    backOutUp,
+    bounce,
+    bounceIn,
+    bounceInDown,
+    bounceInLeft,
+    bounceInRight,
+    bounceInUp,
+    bounceOut,
+    bounceOutDown,
+    bounceOutLeft,
+    bounceOutRight,
+    bounceOutUp,
+    fadeIn,
+    fadeInBottomLeft,
+    fadeInBottomRight,
+    fadeInDown,
+    fadeInDownBig,
+    fadeInLeft,
+    fadeInLeftBig,
+    fadeInRight,
+    fadeInRightBig,
+    fadeInTopLeft,
+    fadeInTopRight,
+    fadeInUp,
+    fadeInUpBig,
+    fadeOut,
+    fadeOutBottomLeft,
+    fadeOutBottomRight,
+    fadeOutDown,
+    fadeOutDownBig,
+    fadeOutLeft,
+    fadeOutLeftBig,
+    fadeOutRight,
+    fadeOutRightBig,
+    fadeOutTopLeft,
+    fadeOutTopRight,
+    fadeOutUp,
+    fadeOutUpBig,
+    flash,
+    flip,
+    flipInX,
+    flipInY,
+    flipOutX,
+    flipOutY,
+    headShake,
+    heartBeat,
+    hinge,
+    jackInTheBox,
+    jello,
+    lightSpeedInLeft,
+    lightSpeedInRight,
+    lightSpeedOutLeft,
+    lightSpeedOutRight,
+    pulse,
+    rollIn,
+    rollOut,
+    rotateIn,
+    rotateInDownLeft,
+    rotateInDownRight,
+    rotateInUpLeft,
+    rotateInUpRight,
+    rotateOut,
+    rotateOutDownLeft,
+    rotateOutDownRight,
+    rotateOutUpLeft,
+    rotateOutUpRight,
+    rubberBand,
+    shakeX,
+    shakeY,
+    slideInDown,
+    slideInLeft,
+    slideInRight,
+    slideInUp,
+    slideOutDown,
+    slideOutLeft,
+    slideOutRight,
+    slideOutUp,
+    swing,
+    tada,
+    wobble,
+    zoomIn,
+    zoomInDown,
+    zoomInLeft,
+    zoomInRight,
+    zoomInUp,
+    zoomOut,
+    zoomOutDown,
+    zoomOutLeft,
+    zoomOutRight,
+    zoomOutUp
+} from 'ng-animate';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None,
-  animations: [
-    trigger('bounce', [transition('* => *', useAnimation(bounce))]),
-    trigger('flash', [transition('* => *', useAnimation(flash))]),
-    trigger('pulse', [transition('* => *', useAnimation(pulse))]),
-    trigger('rubberBand', [transition('* => *', useAnimation(rubberBand))]),
-    trigger('shake', [transition('* => *', useAnimation(shake))]),
-    trigger('swing', [transition('* => *', useAnimation(swing))]),
-    trigger('tada', [transition('* => *', useAnimation(tada))]),
-    trigger('wobble', [transition('* => *', useAnimation(wobble))]),
-    trigger('jello', [transition('* => *', useAnimation(jello))]),
-
-    trigger('bounceIn', [transition('* => *', useAnimation(bounceIn))]),
-    trigger('bounceInDown', [transition('* => *', useAnimation(bounceInDown))]),
-    trigger('bounceInLeft', [transition('* => *', useAnimation(bounceInLeft))]),
-    trigger('bounceOut', [transition('* => *', useAnimation(bounceOut))]),
-    trigger('bounceOutRight', [
-      transition('* => *', useAnimation(bounceOutRight))
-    ]),
-    trigger('bounceOutUp', [transition('* => *', useAnimation(bounceOutUp))]),
-
-    trigger('fadeIn', [transition('* => *', useAnimation(fadeIn))]),
-    trigger('fadeInDown', [transition('* => *', useAnimation(fadeInDown))]),
-    trigger('fadeInLeft', [transition('* => *', useAnimation(fadeInLeft))]),
-    trigger('fadeOut', [transition('* => *', useAnimation(fadeOut))]),
-    trigger('fadeOutUp', [transition('* => *', useAnimation(fadeOutUp))]),
-    trigger('fadeOutRight', [transition('* => *', useAnimation(fadeOutRight))]),
-
-    trigger('slideInDown', [transition('* => *', useAnimation(slideInDown))]),
-    trigger('slideInLeft', [transition('* => *', useAnimation(slideInLeft))]),
-    trigger('slideOutUp', [transition('* => *', useAnimation(slideOutUp))]),
-    trigger('slideOutRight', [
-      transition('* => *', useAnimation(slideOutRight))
-    ]),
-
-    trigger('flip', [transition('* => *', useAnimation(flip))]),
-    trigger('flipInX', [transition('* => *', useAnimation(flipInX))]),
-    trigger('flipInY', [transition('* => *', useAnimation(flipInY))]),
-    trigger('flipOutX', [transition('* => *', useAnimation(flipOutX))]),
-    trigger('flipOutY', [transition('* => *', useAnimation(flipOutY))]),
-
-    trigger('lightSpeedIn', [transition('* => *', useAnimation(lightSpeedIn))]),
-    trigger('lightSpeedOut', [
-      transition('* => *', useAnimation(lightSpeedOut))
-    ]),
-
-    trigger('rotateIn', [transition('* => *', useAnimation(rotateIn))]),
-    trigger('rotateInDownLeft', [
-      transition('* => *', useAnimation(rotateInDownLeft))
-    ]),
-    trigger('rotateInUpRight', [
-      transition('* => *', useAnimation(rotateInUpRight))
-    ]),
-    trigger('rotateOut', [transition('* => *', useAnimation(rotateOut))]),
-    trigger('rotateOutUpLeft', [
-      transition('* => *', useAnimation(rotateOutUpLeft))
-    ]),
-    trigger('rotateOutDownRight', [
-      transition('* => *', useAnimation(rotateOutDownRight))
-    ]),
-
-    trigger('hinge', [transition('* => *', useAnimation(hinge))]),
-    trigger('jackInTheBox', [transition('* => *', useAnimation(jackInTheBox))]),
-    trigger('rollIn', [transition('* => *', useAnimation(rollIn))]),
-    trigger('rollOut', [transition('* => *', useAnimation(rollOut))]),
-
-    trigger('zoomIn', [transition('* => *', useAnimation(zoomIn))]),
-    trigger('zoomInLeft', [transition('* => *', useAnimation(zoomInLeft))]),
-    trigger('zoomInDown', [transition('* => *', useAnimation(zoomInDown))]),
-    trigger('zoomOut', [transition('* => *', useAnimation(zoomOut))]),
-    trigger('zoomOutUp', [transition('* => *', useAnimation(zoomOutUp))]),
-    trigger('zoomOutRight', [transition('* => *', useAnimation(zoomOutRight))])
-  ]
+  animations: [trigger('tada', [transition('* => *', useAnimation(tada))])],
 })
 export class AppComponent {
-  bounce = false;
-  flash = false;
-  pulse = false;
-  rubberBand = false;
-  shake = false;
-  swing = false;
-  tada = false;
-  wobble = false;
-  jello = false;
+  attentionSeekersAnimations = {
+    bounce,
+    flash,
+    pulse,
+    rubberBand,
+    shakeX,
+    shakeY,
+    headShake,
+    swing,
+    tada,
+    wobble,
+    jello,
+    heartBeat,
+  };
 
-  attentionSeekers = [
-    'bounce',
-    'flash',
-    'pulse',
-    'rubberBand',
-    'shake',
-    'swing',
-    'tada',
-    'wobble',
-    'jello'
-  ];
+  backEntrances = {
+    backInDown,
+    backInLeft,
+    backInRight,
+    backInUp,
+  };
 
-  // ==================
+  backExits = {
+    backOutDown,
+    backOutLeft,
+    backOutRight,
+    backOutUp,
+  };
 
-  bounceIn = false;
-  bounceInDown = false;
-  bounceInLeft = false;
-  bounceOut = false;
-  bounceOutUp = false;
-  bounceOutRight = false;
+  bouncingEntrances = {
+    bounceIn,
+    bounceInDown,
+    bounceInLeft,
+    bounceInRight,
+    bounceInUp,
+  };
 
-  bouncing = [
-    'bounceIn',
-    'bounceInDown',
-    'bounceInLeft',
-    'bounceOut',
-    'bounceOutUp',
-    'bounceOutRight'
-  ];
+  bouncingExits = {
+    bounceOut,
+    bounceOutDown,
+    bounceOutLeft,
+    bounceOutRight,
+    bounceOutUp,
+  };
 
-  // ==================
+  fadingEntrances = {
+    fadeIn,
+    fadeInDown,
+    fadeInDownBig,
+    fadeInLeft,
+    fadeInLeftBig,
+    fadeInRight,
+    fadeInRightBig,
+    fadeInUp,
+    fadeInUpBig,
+    fadeInTopLeft,
+    fadeInTopRight,
+    fadeInBottomLeft,
+    fadeInBottomRight,
+  };
 
-  fadeIn = false;
-  fadeInDown = false;
-  fadeInLeft = false;
-  fadeOut = false;
-  fadeOutUp = false;
-  fadeOutRight = false;
+  fadingExits = {
+    fadeOut,
+    fadeOutDown,
+    fadeOutDownBig,
+    fadeOutLeft,
+    fadeOutLeftBig,
+    fadeOutRight,
+    fadeOutRightBig,
+    fadeOutUp,
+    fadeOutUpBig,
+    fadeOutTopLeft,
+    fadeOutTopRight,
+    fadeOutBottomRight,
+    fadeOutBottomLeft,
+  };
 
-  // ==================
+  flippers = { flip, flipInX, flipInY, flipOutX, flipOutY };
 
-  fading = [
-    'fadeIn',
-    'fadeInDown',
-    'fadeInLeft',
-    'fadeOut',
-    'fadeOutUp',
-    'fadeOutRight'
-  ];
+  lightspeed = {
+    lightSpeedInRight,
+    lightSpeedInLeft,
+    lightSpeedOutRight,
+    lightSpeedOutLeft,
+  };
 
-  // ==================
+  rotatingEntrances = {
+    rotateIn,
+    rotateInDownLeft,
+    rotateInDownRight,
+    rotateInUpLeft,
+    rotateInUpRight,
+  };
 
-  slideInDown = false;
-  slideInLeft = false;
-  slideOutUp = false;
-  slideOutRight = false;
+  rotatingExits = {
+    rotateOut,
+    rotateOutDownLeft,
+    rotateOutDownRight,
+    rotateOutUpLeft,
+    rotateOutUpRight,
+  };
 
-  sliding = ['slideInDown', 'slideInLeft', 'slideOutUp', 'slideOutRight'];
+  specials = {
+    hinge,
+    jackInTheBox,
+    rollIn,
+    rollOut,
+  };
 
-  // ==================
+  zoomingEntrances = {
+    zoomIn,
+    zoomInDown,
+    zoomInLeft,
+    zoomInRight,
+    zoomInUp,
+  };
 
-  flip = false;
-  flipInX = false;
-  flipInY = false;
-  flipOutX = false;
-  flipOutY = false;
+  zoomingExits = {
+    zoomOut,
+    zoomOutDown,
+    zoomOutLeft,
+    zoomOutRight,
+    zoomOutUp,
+  };
 
-  flippers = ['flip', 'flipInX', 'flipInY', 'flipOutX', 'flipOutY'];
+  slidingEntrances = {
+    slideInDown,
+    slideInLeft,
+    slideInRight,
+    slideInUp,
+  };
 
-  // ==================
+  slidingExits = {
+    slideOutDown,
+    slideOutLeft,
+    slideOutRight,
+    slideOutUp,
+  };
 
-  lightSpeedIn = false;
-  lightSpeedOut = false;
+  rotateInParams = { rotateIn };
 
-  lightSpeed = ['lightSpeedIn', 'lightSpeedOut'];
+  // params
 
-  // ==================
-
-  rotateIn = false;
-  rotateInDownLeft = false;
-  rotateInUpRight = false;
-  rotateOut = false;
-  rotateOutUpLeft = false;
-  rotateOutDownRight = false;
-
-  rotate = [
-    'rotateIn',
-    'rotateInDownLeft',
-    'rotateInUpRight',
-    'rotateOut',
-    'rotateOutUpLeft',
-    'rotateOutDownRight'
-  ];
-
-  // ==================
-
-  hinge = false;
-  jackInTheBox = false;
-  rollIn = false;
-  rollOut = false;
-
-  specials = ['hinge', 'jackInTheBox', 'rollIn', 'rollOut'];
-
-  // ==================
-
-  zoomIn = false;
-  zoomInDown = false;
-  zoomInLeft = false;
-  zoomOut = false;
-  zoomOutUp = false;
-  zoomOutRight = false;
-
-  zooming = [
-    'zoomIn',
-    'zoomInDown',
-    'zoomInLeft',
-    'zoomOut',
-    'zoomOutUp',
-    'zoomOutRight'
-  ];
-
-  animate(name: 'string') {
-    this[name] = !this[name];
-  }
+  animationTiming = 2;
+  fromOpacity = 0;
+  toOpacity = 1;
+  degrees = 90;
+  originX = 'center';
+  originY = 'center';
 }

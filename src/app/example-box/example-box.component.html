@@ -1,0 +1,6 @@
+<div #box class="box"></div>
+<h3 *ngIf="label">{{ label }}</h3>
+<p>
+  <button *ngFor="let anim of animations | keyvalue" (click)="playAnim(box, anim.value)" class="btn"
+    type="button">{{ anim.key }}</button>
+</p>

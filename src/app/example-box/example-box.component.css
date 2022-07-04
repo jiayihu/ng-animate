@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 3px;
+  height: 48px;
+  width: 48px;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
